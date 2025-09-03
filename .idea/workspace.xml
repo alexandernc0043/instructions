@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/assignments/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/assignments/m0a/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/assignments/m0d/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/atomOneDark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Navigation.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/TableOfContents.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Warning.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/module-0/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/page.module.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +100,8 @@
       <workItem from="1756824685318" duration="8695000" />
       <workItem from="1756841697412" duration="3989000" />
       <workItem from="1756852665031" duration="2848000" />
-      <workItem from="1756910418357" duration="6680000" />
+      <workItem from="1756910418357" duration="6796000" />
+      <workItem from="1756929129140" duration="2681000" />
     </task>
     <servers />
   </component>
