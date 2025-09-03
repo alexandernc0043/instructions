@@ -1,7 +1,7 @@
 "use client";
-import {HeaderConfig} from "@/app/assignments/layout";
+import {HeaderConfig} from "@/app/(assignments)/layout";
 import Highlight from 'react-highlight'
-import Warning from "@/app/components/Warning";
+import Warning from "@/components/feedback/Warning";
 
 export default function M0d() {
     return <>

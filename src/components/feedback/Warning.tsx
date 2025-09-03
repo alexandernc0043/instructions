@@ -3,3 +3,4 @@ export default function Warning({msg}: { msg: string }) {
         <strong>WARNING: </strong> {msg}
     </blockquote>
 }
+

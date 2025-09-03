@@ -16,3 +16,4 @@ export default function Header({title, message}: { title: string, message: strin
         </>
     );
 }
+

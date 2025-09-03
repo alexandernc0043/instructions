@@ -7,13 +7,14 @@ export type routeType = {
 };
 
 export type NavigationProps = {
+    title: string,
     routes: routeType[];
 };
 
-export function Navigation({ routes }: NavigationProps) {
+export function Navigation({ title, routes }: NavigationProps) {
     return (
         <div id="toc">
-            <div id="toc-title">Table of Contents</div>
+            <div id="toc-title">{title}</div>
             <ul>
                 {routes.map((route, index) => (
                     <li key={index}>
@@ -24,3 +25,4 @@ export function Navigation({ routes }: NavigationProps) {
         </div>
     );
 }
+

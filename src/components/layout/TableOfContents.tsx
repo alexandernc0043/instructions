@@ -1,11 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 
 export default function TableOfContents() {
     const [sections, setSections] = useState<Element[]>([]);
     useEffect(() => {
-        setSections(Array.from(document.querySelectorAll("section")));
+        const timer = setTimeout(() => {
+            setSections(Array.from(document.querySelectorAll("section")));
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
     useEffect(() => {
         sections.forEach((elem, index) => {

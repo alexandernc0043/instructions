@@ -1,9 +1,7 @@
 "use client";
 import React, {ReactNode, createContext, useContext, useEffect, useMemo, useState} from "react";
-import Header from "@/app/components/Header";
-import TableOfContents from "@/app/components/TableOfContents";
-import Footer from "@/app/components/Footer";
-
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 type HeaderConfig = { title: string; message: string };
 
 type HeaderContextValue = {
@@ -40,10 +38,11 @@ export default function Layout({children}: { children: ReactNode }) {
     const value = useMemo(() => ({title, message, setHeader}), [title, message]);
     return (
         <HeaderContext.Provider value={value}>
-            <header>
-                <Header title={title} message={message}/>
-                <TableOfContents/>
-            </header>
+            {(title != "N/A") && (
+                <header>
+                    <Header title={title} message={message}/>
+                </header>
+            )}
             <main>
                 {children}
             </main>
