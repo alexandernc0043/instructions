@@ -1,6 +1,11 @@
 import React from "react";
 import {Navigation, routeType} from "@/components/navigation/Navigation";
-import {HeaderConfig} from "@/components/layout/HeaderProvider";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Module 0",
+    description: "Welcome to Module 0",
+};
 
 export default function Index() {
     const routes = [
@@ -9,7 +14,6 @@ export default function Index() {
     ] as routeType[];
     return (
         <>
-            <HeaderConfig title={"Module 0"} message={"Welcome to Module 0"} />
             <Navigation routes={routes} title={"Module 0"}/>
         </>
     );

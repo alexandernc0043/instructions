@@ -28,7 +28,7 @@ export function HeaderConfig({ title, message }: HeaderConfig) {
   return null;
 }
 
-export function HeaderProvider({ children }: { children: ReactNode }) {
+export function HeaderProvider() {
   const [title, setTitle] = useState("N/A");
   const [message, setMessage] = useState("N/A");
   const pathname = usePathname();
@@ -40,10 +40,27 @@ export function HeaderProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => ({ title, message, setHeader }), [title, message]);
 
-  // Reset header on route changes to avoid stale values
+  // On route change, attempt to read Next.js metadata (title/description)
+  // to populate the header without requiring <HeaderConfig>.
   useEffect(() => {
-    setTitle("N/A");
-    setMessage("N/A");
+    // Defer to let Next apply <head> updates first.
+    const id = setTimeout(() => {
+      try {
+        const docTitle = typeof document !== "undefined" ? document.title : "";
+        const metaDesc = typeof document !== "undefined"
+          ? document.querySelector('meta[name="description"]')?.getAttribute("content") ?? ""
+          : "";
+        if (docTitle) {
+          setTitle(docTitle);
+        }
+        if (metaDesc) {
+          setMessage(metaDesc);
+        }
+      } catch {
+        // no-op; metadata might not be available
+      }
+    }, 0);
+    return () => clearTimeout(id);
   }, [pathname]);
 
   return (
@@ -53,7 +70,6 @@ export function HeaderProvider({ children }: { children: ReactNode }) {
           <Header title={title} message={message} />
         </header>
       )}
-      <main>{children}</main>
     </HeaderContext.Provider>
   );
 }

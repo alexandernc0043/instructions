@@ -1,9 +1,13 @@
-import {HeaderConfig} from "@/components/layout/HeaderProvider";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Assignment M0a",
+    description: "NinerLink",
+};
 
 export default function Page() {
     return (
         <>
-            <HeaderConfig title="Assignment M0a" message="NinerLink" />
             <section>
                 <h2>test</h2>
             </section>

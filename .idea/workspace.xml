@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ui/CodeHighlight.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(modules)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/BackLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data/RenderJSONPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/themes/atomOneDark.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +108,8 @@
       <workItem from="1756841697412" duration="3989000" />
       <workItem from="1756852665031" duration="2848000" />
       <workItem from="1756910418357" duration="6796000" />
-      <workItem from="1756929129140" duration="3345000" />
+      <workItem from="1756929129140" duration="3833000" />
+      <workItem from="1756934319104" duration="2791000" />
     </task>
     <servers />
   </component>

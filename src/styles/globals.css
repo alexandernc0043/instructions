@@ -6,6 +6,28 @@
 @source "../lib/**/*.{ts,tsx}";
 @source "./**/*.css";
 
+:root {
+    --sh-class: #82aaff;       /* Bright blue for class */
+    --sh-identifier: #c3e88d;  /* Soft green for identifiers */
+    --sh-sign: #89ddff;        /* Cyan for signs/symbols */
+    --sh-property: #ffcb6b;    /* Warm yellow for properties */
+    --sh-entity: #f78c6c;      /* Orange for entities */
+    --sh-jsxliterals: #c792ea; /* Purple for JSX literals */
+    --sh-string: #c3e88d;      /* Green for strings */
+    --sh-keyword: #f07178;     /* Red-pink for keywords */
+    --sh-comment: #5c6370;     /* Muted gray for comments */
+}
+pre div {
+    counter-reset: sh-line-number;
+}
+
+.sh__line::before {
+    counter-increment: sh-line-number 1;
+    content: counter(sh-line-number);
+    margin-right: 24px;
+    text-align: right;
+    color: #a4a4a4;
+}
 
 @layer base {
     html {
@@ -15,6 +37,14 @@
     body {
         @apply m-0 p-4 md:p-8;
         counter-reset: header;
+    }
+
+    a {
+        @apply text-blue-600 no-underline transition-colors;
+    }
+
+    a:hover {
+        @apply text-blue-900 underline;
     }
 
 }
@@ -64,6 +94,7 @@
         content: "(" counter(header) ") ";
         counter-increment: header;
     }
+
 }
 
 /* Blockquotes */
@@ -84,7 +115,7 @@
         @apply max-w-full h-auto;
     }
 
-    code, pre code {
+   code  /*,pre code */{
         @apply text-neutral-100 font-mono text-base rounded;
     }
 
@@ -92,18 +123,14 @@
         @apply bg-neutral-900 px-2 py-1 border border-neutral-700;
     }
 
-    pre {
-        @apply bg-neutral-900 p-4 overflow-x-auto rounded-lg my-6;
-    }
+    /*pre {*/
+    /*    @apply bg-neutral-900 p-4 overflow-x-auto rounded-lg my-6;*/
+    /*}*/
 
-    pre code {
-        @apply border-0 p-0 bg-transparent text-inherit text-base whitespace-pre;
-    }
+    /*pre code {*/
+    /*    @apply border-0 p-0 bg-transparent text-inherit text-base whitespace-pre;*/
+    /*}*/
 
-    /* Prevent double-styling when using highlight.js themes */
-    .hljs {
-        @apply bg-transparent p-0 rounded-none text-inherit;
-    }
 }
 
 /* Footer */
@@ -131,11 +158,5 @@
         @apply mb-2 leading-6;
     }
 
-    #toc a {
-        @apply text-blue-600 no-underline transition-colors;
-    }
 
-    #toc a:hover {
-        @apply text-blue-900 underline;
-    }
 }

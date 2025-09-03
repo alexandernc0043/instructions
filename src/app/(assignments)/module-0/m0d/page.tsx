@@ -1,12 +1,17 @@
-"use client";
-import {HeaderConfig} from "@/components/layout/HeaderProvider";
-import Highlight from 'react-highlight'
+import type {Metadata} from "next";
 import Warning from "@/components/feedback/Warning";
+import CodeHighlight from "@/components/ui/CodeHighlight";
+
+
+export const metadata: Metadata = {
+    title: "Assignment M0d - Setup University Webspace",
+    description: "Please follow all instructions before continuing to the next step.",
+};
 
 export default function M0d() {
+
+
     return <>
-        <HeaderConfig title="Assignment M0d - Setup University Webspace"
-                      message="Please follow all instructions before continuing to the next step."/>
         <section>
             <h2>Setup your computer</h2>
             <ol>
@@ -99,7 +104,7 @@ export default function M0d() {
                     keyboard.
                 </li>
                 <li>Your file should look like this now:<br/>
-                    <Highlight innerHTML={false}>
+                    <CodeHighlight>
                         {'<!-- root/index.html -->\n' +
                             '<!DOCTYPE html>\n' +
                             '<html lang="en">\n' +
@@ -111,39 +116,39 @@ export default function M0d() {
                             '<body>\n' +
                             '</body>\n' +
                             '</html>'}
-                    </Highlight>
+                    </CodeHighlight>
                 </li>
                 <li>Edit your title by editing the word <code>Document</code> inside this
                     element <code>{'<title>Document</title>'}</code> with [YOUR_NAME] [Divider]
                     Homepage
                     <blockquote>
                         <strong>Example(s):</strong>
-                        <Highlight>{'<title>Alexander Prechtel | Homepage</title>\n' + '<title>Alexander Prechtel ~ Homepage</title>\n' + '<title>Alexander Prechtel - Homepage</title>'}</Highlight>
+                        <pre><code>{'<title>Alexander Prechtel | Homepage</title>\n' + '<title>Alexander Prechtel ~ Homepage</title>\n' + '<title>Alexander Prechtel - Homepage</title>'}</code></pre>
                     </blockquote>
                 </li>
                 <li>
                     Inside your <code>body</code> element add a Heading 1 element (<code>h1</code>) and put the
                     following:
-                    <Highlight>
+                    <CodeHighlight>
                         {'<body>\n' +
-                            '<h1>Welcome to my homepage!</h1>\n' +
+                            '\t<h1>Welcome to my homepage!</h1>\n' +
                             '</body>'}
-                    </Highlight>
+                    </CodeHighlight>
 
                 </li>
                 <li>
                     Now add an anchor element ( <code>a</code> ) after your heading 1 element that will take you to your
                     course page.
-                    <Highlight
-                        className={"html"}>{'<a href="itis3135">Click here to go to my ITIS-3135 course page!</a>'}</Highlight>
+                    <code
+                        className={"html"}>{'<a href="itis3135">Click here to go to my ITIS-3135 course page!</a>'}</code>
                     <blockquote>Your body should now look like this:
-                        <Highlight>
+                        <CodeHighlight>
                             {'<!-- root/index.html -->\n' +
                                 '<body>\n' +
-                                '<h1>Welcome to my homepage!</h1>\n' +
-                                '<a href="itis3135">Click here to go to my ITIS-3135 coursepage!</a>\n' +
+                                '\t<h1>Welcome to my homepage!</h1>\n' +
+                                '\t<a href="itis3135">Click here to go to my ITIS-3135 coursepage!</a>\n' +
                                 '</body>'}
-                        </Highlight>
+                        </CodeHighlight>
                     </blockquote>
                 </li>
             </ol>
@@ -177,20 +182,22 @@ export default function M0d() {
                 <li>
                     Replace everywhere you have <code>homepage</code> with <code>ITIS-3135 course page</code>
                     <blockquote> Your new <code>index.html</code> file should look like this now:
-                        <Highlight>
+
+                        <CodeHighlight>
                             {'<!-- root/itis3135/index.html -->\n' +
                                 '<!DOCTYPE html>\n' +
                                 '<html lang="en">\n' +
                                 '<head>\n' +
-                                '<meta charset="UTF-8">\n' +
-                                '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-                                '<title>Alexander Prechtel | ITIS-3135 Course page</title>\n' +
+                                '\t<meta charset="UTF-8">\n' +
+                                '\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+                                '\t<title>Alexander Prechtel | ITIS-3135 Course page</title>\n' +
                                 '</head>\n' +
                                 '<body>\n' +
-                                '<h1>Welcome to my ITIS-3135 course page!</h1>\n' +
+                                '\t<h1>Welcome to my ITIS-3135 course page!</h1>\n' +
                                 '</body>\n' +
                                 '</html>'}
-                        </Highlight>
+                        </CodeHighlight>
+
                     </blockquote>
                 </li>
                 <li>
@@ -240,8 +247,8 @@ export default function M0d() {
                     you
                     should see a template website saying it&apos;s created.
                     <br/>
-                    <blockquote><strong>Example:</strong> <a target="_blank"
-                                                             href="https://webpages.charlotte.edu/aprechte">https://webpages.charlotte.edu/aprechte</a>
+                    <blockquote><strong>Example:</strong> <a href="https://webpages.charlotte.edu/aprechte"
+                                                             target={"_blank"}>https://webpages.charlotte.edu/aprechte</a>
                     </blockquote>
                 </li>
                 <li>
