@@ -123,7 +123,7 @@ export default function M0d() {
                     Homepage
                     <blockquote>
                         <strong>Example(s):</strong>
-                        <pre><code>{'<title>Alexander Prechtel | Homepage</title>\n' + '<title>Alexander Prechtel ~ Homepage</title>\n' + '<title>Alexander Prechtel - Homepage</title>'}</code></pre>
+                        <CodeHighlight>{'<title>Alexander Prechtel | Homepage</title>\n' + '<title>Alexander Prechtel ~ Homepage</title>\n' + '<title>Alexander Prechtel - Homepage</title>'}</CodeHighlight>
                     </blockquote>
                 </li>
                 <li>
@@ -139,8 +139,7 @@ export default function M0d() {
                 <li>
                     Now add an anchor element ( <code>a</code> ) after your heading 1 element that will take you to your
                     course page.
-                    <code
-                        className={"html"}>{'<a href="itis3135">Click here to go to my ITIS-3135 course page!</a>'}</code>
+                    <CodeHighlight>{'<a href="itis3135">Click here to go to my ITIS-3135 course page!</a>'}</CodeHighlight>
                     <blockquote>Your body should now look like this:
                         <CodeHighlight>
                             {'<!-- root/index.html -->\n' +
