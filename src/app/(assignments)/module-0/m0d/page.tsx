@@ -1,5 +1,5 @@
 "use client";
-import {HeaderConfig} from "@/app/(assignments)/layout";
+import {HeaderConfig} from "@/components/layout/HeaderProvider";
 import Highlight from 'react-highlight'
 import Warning from "@/components/feedback/Warning";
 

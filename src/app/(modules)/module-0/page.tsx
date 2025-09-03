@@ -1,6 +1,6 @@
 import React from "react";
 import {Navigation, routeType} from "@/components/navigation/Navigation";
-import {HeaderConfig} from "@/app/(modules)/layout";
+import {HeaderConfig} from "@/components/layout/HeaderProvider";
 
 export default function Index() {
     const routes = [

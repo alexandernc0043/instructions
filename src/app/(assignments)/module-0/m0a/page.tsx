@@ -1,4 +1,4 @@
-import {HeaderConfig} from "@/app/(assignments)/layout";
+import {HeaderConfig} from "@/components/layout/HeaderProvider";
 
 export default function Page() {
     return (

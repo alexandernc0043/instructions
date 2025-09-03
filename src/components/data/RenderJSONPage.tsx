@@ -1,4 +1,4 @@
-import {HeaderConfig} from "@/app/(assignments)/layout";
+import {HeaderConfig} from "@/components/layout/HeaderProvider";
 import type { ReactNode } from "react";
 // NOTE: This renderer expects data. Wire it to your data source.
 // import {m0d} from '@/content/module-0/m0d' // Example future location
