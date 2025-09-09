@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/CodeHighlight.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-4/aboutPageMC/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(modules)/module-4/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/data/RenderJSONPage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/themes/atomOneDark.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +60,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(modules)/module-4" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-0" />
       <recent name="$PROJECT_DIR$/src/app/modules" />
       <recent name="$PROJECT_DIR$/src/app/module-0" />
       <recent name="$PROJECT_DIR$/src/app/assignments" />
-      <recent name="$PROJECT_DIR$/src/app/components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm dev">
@@ -109,7 +103,11 @@
       <workItem from="1756852665031" duration="2848000" />
       <workItem from="1756910418357" duration="6796000" />
       <workItem from="1756929129140" duration="3833000" />
-      <workItem from="1756934319104" duration="2791000" />
+      <workItem from="1756934319104" duration="3112000" />
+      <workItem from="1756958520736" duration="63000" />
+      <workItem from="1757123983898" duration="1576000" />
+      <workItem from="1757128830232" duration="4422000" />
+      <workItem from="1757183313184" duration="13000" />
     </task>
     <servers />
   </component>

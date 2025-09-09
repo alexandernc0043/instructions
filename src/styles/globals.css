@@ -7,16 +7,17 @@
 @source "./**/*.css";
 
 :root {
-    --sh-class: #82aaff;       /* Bright blue for class */
-    --sh-identifier: #c3e88d;  /* Soft green for identifiers */
-    --sh-sign: #89ddff;        /* Cyan for signs/symbols */
-    --sh-property: #ffcb6b;    /* Warm yellow for properties */
-    --sh-entity: #f78c6c;      /* Orange for entities */
+    --sh-class: #82aaff; /* Bright blue for class */
+    --sh-identifier: #c3e88d; /* Soft green for identifiers */
+    --sh-sign: #89ddff; /* Cyan for signs/symbols */
+    --sh-property: #ffcb6b; /* Warm yellow for properties */
+    --sh-entity: #f78c6c; /* Orange for entities */
     --sh-jsxliterals: #c792ea; /* Purple for JSX literals */
-    --sh-string: #c3e88d;      /* Green for strings */
-    --sh-keyword: #f07178;     /* Red-pink for keywords */
-    --sh-comment: #5c6370;     /* Muted gray for comments */
+    --sh-string: #c3e88d; /* Green for strings */
+    --sh-keyword: #f07178; /* Red-pink for keywords */
+    --sh-comment: #5c6370; /* Muted gray for comments */
 }
+
 pre div {
     counter-reset: sh-line-number;
 }
@@ -45,6 +46,10 @@ pre div {
 
     a:hover {
         @apply text-blue-900 underline;
+    }
+
+    section > p:last-child {
+        margin-bottom: 20px;
     }
 
 }
@@ -100,7 +105,7 @@ pre div {
 /* Blockquotes */
 @layer components {
     blockquote {
-        @apply bg-neutral-100 border-l-[5px] border-neutral-400 my-6 mx-0 px-4 md:px-6 py-3 text-neutral-700 italic rounded-r-md overflow-x-scroll;
+        @apply bg-neutral-100 border-l-[5px] border-neutral-400 my-6 mx-0 px-4 md:px-6 py-3 text-neutral-700 italic rounded-r-md overflow-x-auto;
     }
 
     .blockquote-red {
@@ -115,7 +120,8 @@ pre div {
         @apply max-w-full h-auto;
     }
 
-   code  /*,pre code */{
+    code /*,pre code */
+    {
         @apply text-neutral-100 font-mono text-base rounded;
     }
 
@@ -126,7 +132,6 @@ pre div {
     /*pre {*/
     /*    @apply bg-neutral-900 p-4 overflow-x-auto rounded-lg my-6;*/
     /*}*/
-
     /*pre code {*/
     /*    @apply border-0 p-0 bg-transparent text-inherit text-base whitespace-pre;*/
     /*}*/

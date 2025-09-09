@@ -12,6 +12,8 @@ export default function Home() {
             <Navigation title={"Modules"} routes={
                 [
                     {text: "Module 0", path: "/module-0"},
+                    {text: "Module 2", path: "/module-2"},
+                    {text: "Module 4", path: "/module-4"},
                 ]
             }/>
         </>
