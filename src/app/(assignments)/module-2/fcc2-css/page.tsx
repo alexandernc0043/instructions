@@ -12,7 +12,7 @@ export default function FCC2_CSS() {
       <section>
         <h2>Overview</h2>
         <p>
-          Complete these lessons in the freeCodeCamp Full Stack Curriculum. You'll need to create an account first.
+          Complete these lessons in the freeCodeCamp Full Stack Curriculum. You&apos;ll need to create an account first.
         </p>
       </section>
       <hr />
