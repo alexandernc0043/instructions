@@ -90,6 +90,9 @@ export default function M0d() {
                 <li>Navigate to the create repository button and create a repository.</li>
                 <li>Name the repository as follows: <strong>YOUR_GITHUB_USERNAME</strong>.github.io
                     <Warning msg={"If you do not name your repository exactly like that your webpage will not work."}/>
+                    <blockquote>
+                        <strong>Example:</strong> My GitHub username is <strong>alexandernc0043</strong> so my repository should be named <code>alexandernc0043.github.io</code>
+                    </blockquote>
                 </li>
                 <li>Open GitHub Desktop and clone your repository.</li>
                 <li>Open your cloned repository in Visual Studio Code by clicking the button inside GitHub Desktop</li>
@@ -105,7 +108,7 @@ export default function M0d() {
                 </li>
                 <li>Your file should look like this now:<br/>
                     <CodeHighlight>
-                        {'<!-- root/index.html -->\n' +
+                        {'<!-- USERNAME.github.io/index.html -->\n' +
                             '<!DOCTYPE html>\n' +
                             '<html lang="en">\n' +
                             '<head>\n' +
@@ -142,7 +145,7 @@ export default function M0d() {
                     <CodeHighlight>{'<a href="itis3135">Click here to go to my ITIS-3135 course page!</a>'}</CodeHighlight>
                     <blockquote>Your body should now look like this:
                         <CodeHighlight>
-                            {'<!-- root/index.html -->\n' +
+                            {'<!-- USERNAME.github.io/index.html -->\n' +
                                 '<body>\n' +
                                 '\t<h1>Welcome to my homepage!</h1>\n' +
                                 '\t<a href="itis3135">Click here to go to my ITIS-3135 coursepage!</a>\n' +
@@ -183,7 +186,7 @@ export default function M0d() {
                     <blockquote> Your new <code>index.html</code> file should look like this now:
 
                         <CodeHighlight>
-                            {'<!-- root/itis3135/index.html -->\n' +
+                            {'<!-- USERNAME.github.io/itis3135/index.html -->\n' +
                                 '<!DOCTYPE html>\n' +
                                 '<html lang="en">\n' +
                                 '<head>\n' +
