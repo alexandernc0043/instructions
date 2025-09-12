@@ -36,6 +36,7 @@ export default function Introductions() {
     }, [])
     const [imageCaption, setImageCaption] = useState("At the beach on the eastern coast of Florida (2024)")
     const [personalBackground, setPersonalBackground] = useState("Grew up north of Charlotte, and have always had a love of computers.")
+    const [personalStatement, setPersonalStatement] = useState("")
     const [professionalBackground, setProfessionalBackground] = useState("This is my first semester as an Instructional Assistant/Teachers Assistant, but before that I was a Peer Tutor for CCI.")
     const [academicBackground, setAcademicBackground] = useState("I’m currently a Junior at UNC Charlotte studying computer science with a focus in Cybersecurity. Before that I attended Highschool in Mooresville, North Carolina.")
     const [primaryComputer, setPrimaryComputer] = useState("The laptop I use for university is a Macbook Pro M2 14 inch. I also use a custom built Windows 11 computer.")
@@ -136,6 +137,7 @@ export default function Introductions() {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     placeholder="Your name"
+                                    title="Enter your legal first name"
                                     className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 />
                             </div>
@@ -147,6 +149,7 @@ export default function Introductions() {
                                     value={middleInitial}
                                     onChange={(e) => setMiddleInitial(e.target.value)}
                                     placeholder="Your middle initial."
+                                    title="Provide your middle initial, if applicable"
                                     className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 />
                             </div>
@@ -158,6 +161,7 @@ export default function Introductions() {
                                     value={preferredName}
                                     onChange={(e) => setPreferredName(e.target.value)}
                                     placeholder="Your preferred name."
+                                    title="What you prefer to be called"
                                     className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 />
                             </div>
@@ -169,6 +173,7 @@ export default function Introductions() {
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     placeholder="Your last name."
+                                    title="Enter your family/last name"
                                     className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 />
                             </div>
@@ -181,6 +186,7 @@ export default function Introductions() {
                                 value={mascot}
                                 onChange={(e) => setMascot(e.target.value)}
                                 placeholder="Your mascot."
+                                title="Your chosen mascot for the course"
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
@@ -192,6 +198,7 @@ export default function Introductions() {
                                 value={divider}
                                 onChange={(e) => setDivider(e.target.value)}
                                 placeholder="Divider"
+                                title="Symbol used to separate sections (e.g., ~ or |)"
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
@@ -217,6 +224,7 @@ export default function Introductions() {
                                 value={imageCaption}
                                 onChange={(e) => setImageCaption(e.target.value)}
                                 placeholder="Short description of the image"
+                                title="Describe the image for accessibility"
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
@@ -229,6 +237,20 @@ export default function Introductions() {
                                 value={personalBackground}
                                 onChange={(e) => setPersonalBackground(e.target.value)}
                                 placeholder="A few sentences about you"
+                                title="Share a bit about your personal background"
+                                rows={3}
+                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                        </div>
+
+                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                            <label className="font-medium text-sm text-neutral-700" htmlFor="personalStatement">Personal Statement</label>
+                            <textarea
+                                id="personalStatement"
+                                value={personalStatement}
+                                onChange={(e) => setPersonalStatement(e.target.value)}
+                                placeholder="A brief personal statement or summary"
+                                title="Add a short personal statement to include in your intro"
                                 rows={3}
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
@@ -242,6 +264,7 @@ export default function Introductions() {
                                 value={professionalBackground}
                                 onChange={(e) => setProfessionalBackground(e.target.value)}
                                 placeholder="Work experience or roles"
+                                title="Jobs, internships, roles, notable projects"
                                 rows={3}
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
@@ -255,6 +278,7 @@ export default function Introductions() {
                                 value={academicBackground}
                                 onChange={(e) => setAcademicBackground(e.target.value)}
                                 placeholder="Schools, major, focus, etc."
+                                title="Academic interests, research, concentrations, honors"
                                 rows={3}
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
@@ -269,6 +293,7 @@ export default function Introductions() {
                                 value={primaryComputer}
                                 onChange={(e) => setPrimaryComputer(e.target.value)}
                                 placeholder="Your main device(s)"
+                                title="Your primary computer(s) or devices"
                                 className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                         </div>
@@ -303,58 +328,78 @@ export default function Introductions() {
                         <div className="flex flex-col gap-3 sm:gap-4">
                             {courses.map((c, idx) => (
                                 <div key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
-                                    <input
-                                        type="text"
-                                        value={c.dept}
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                ...pc,
-                                                dept: v
-                                            }) : pc));
-                                        }}
-                                        placeholder="DEPT"
-                                        className="md:col-span-1 border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    />
-                                    <input
-                                        type="text"
-                                        value={c.number}
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                ...pc,
-                                                number: v
-                                            }) : pc));
-                                        }}
-                                        placeholder="####"
-                                        className="md:col-span-1 border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    />
-                                    <input
-                                        type="text"
-                                        value={c.name}
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                ...pc,
-                                                name: v
-                                            }) : pc));
-                                        }}
-                                        placeholder="Name of the course..."
-                                        className="md:col-span-3 border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    />
-                                    <input
-                                        type="text"
-                                        value={c.reason}
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                ...pc,
-                                                reason: v
-                                            }) : pc));
-                                        }}
-                                        placeholder="Why you're taking the course..."
-                                        className="md:col-span-6 border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    />
+                                    <div className="md:col-span-2 flex flex-col gap-1">
+                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-dept-${idx}`}>Department Prefix</label>
+                                        <input
+                                            id={`course-dept-${idx}`}
+                                            type="text"
+                                            value={c.dept}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                    ...pc,
+                                                    dept: v
+                                                }) : pc));
+                                            }}
+                                            placeholder="Prefex"
+                                            title="Department prefix (e.g., ITIS, MATH)"
+                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
+                                    <div className="md:col-span-2 flex flex-col gap-1">
+                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-number-${idx}`}>Course Number</label>
+                                        <input
+                                            id={`course-number-${idx}`}
+                                            type="text"
+                                            value={c.number}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                    ...pc,
+                                                    number: v
+                                                }) : pc));
+                                            }}
+                                            placeholder="####"
+                                            title="Numeric course identifier (e.g., 3135)"
+                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
+                                    <div className="md:col-span-3 flex flex-col gap-1">
+                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-name-${idx}`}>Course Name</label>
+                                        <input
+                                            id={`course-name-${idx}`}
+                                            type="text"
+                                            value={c.name}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                    ...pc,
+                                                    name: v
+                                                }) : pc));
+                                            }}
+                                            placeholder="Name of the course..."
+                                            title="Full course title (no section)"
+                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
+                                    <div className="md:col-span-4 flex flex-col gap-1">
+                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-reason-${idx}`}>Reason</label>
+                                        <input
+                                            id={`course-reason-${idx}`}
+                                            type="text"
+                                            value={c.reason}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                    ...pc,
+                                                    reason: v
+                                                }) : pc));
+                                            }}
+                                            placeholder="Why you're taking the course..."
+                                            title="Why you selected or need this course"
+                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
                                     <div className="md:col-span-1 flex md:justify-end">
                                         <button
                                             type="button"
@@ -372,16 +417,23 @@ export default function Introductions() {
                 </div>
             </form>
         </section>
-        <hr/>
+
         <section>
             <h2>Example</h2>
             <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t
-                want the public to see {divider} {firstName} {middleInitial}. {lastName} {divider} {new Date().toLocaleDateString()}</p>
+                want the public to see {divider} {[
+                firstName?.trim()?.[0],
+                (middleInitial || "").trim()?.[0],
+                lastName?.trim()?.[0]
+            ].filter(Boolean).join(" ")} {divider} {new Date().toLocaleDateString()}</p>
             <h3>{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
+            {personalStatement && (
+                <p>{personalStatement}</p>
+            )}
             <figure className={"m-auto w-100"}>
                 {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
                     <img src={image} alt={imageCaption} width={500} height={500}/>}
-                <figcaption><em>{imageCaption}</em></figcaption>
+                <figcaption className={"flex justify-center"}><em>{imageCaption}</em></figcaption>
             </figure>
             <ul>
                 <li><strong>Personal Background: </strong>{personalBackground === "" ? "None." : personalBackground}
@@ -400,7 +452,7 @@ export default function Introductions() {
                                                                                         name,
                                                                                         reason
                                                                                     }, index) => <li
-                            key={index}><strong>{dept}-{number} {divider} {name}</strong>: {reason}</li>)}
+                            key={index}><strong>{dept} {number} &mdash; {name}</strong>: {reason}</li>)}
                     </ul>
                 </li>
             </ul>
