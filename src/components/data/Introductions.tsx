@@ -127,39 +127,51 @@ export default function Introductions() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-                        <div className="flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="name">First Name</label>
-                            <input
-                                id="name"
-                                type="text"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
-                                placeholder="Your name"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1 sm:max-w-[10rem]">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle
-                                Initial</label>
-                            <input
-                                id="middle"
-                                type="text"
-                                value={middleInitial}
-                                onChange={(e) => setMiddleInitial(e.target.value)}
-                                placeholder="Your middle initial."
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last Name</label>
-                            <input
-                                id="last"
-                                type="text"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
-                                placeholder="Your last name."
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
+                        <div className="col-span-full grid grid-cols-4 gap-4">
+                            <div className="flex flex-col gap-1 min-w-0">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="name">First Name</label>
+                                <input
+                                    id="name"
+                                    type="text"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    placeholder="Your name"
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle Initial</label>
+                                <input
+                                    id="middle"
+                                    type="text"
+                                    value={middleInitial}
+                                    onChange={(e) => setMiddleInitial(e.target.value)}
+                                    placeholder="Your middle initial."
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="preferred">Preferred Name</label>
+                                <input
+                                    id="preferred"
+                                    type="text"
+                                    value={preferredName}
+                                    onChange={(e) => setPreferredName(e.target.value)}
+                                    placeholder="Your preferred name."
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last Name</label>
+                                <input
+                                    id="last"
+                                    type="text"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    placeholder="Your last name."
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col gap-1">
                             <label className="font-medium text-sm text-neutral-700" htmlFor="mascot">Mascot</label>
