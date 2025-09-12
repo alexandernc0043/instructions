@@ -9,6 +9,10 @@ export default function Introductions() {
     const [divider, setDivider] = useState("~");
     const [mascot, setMascot] = useState("Advanced Pegasus");
     const [image, setImage] = useState("/headshot.jpeg")
+    const [imageFilename, setImageFilename] = useState<string>(() => {
+        const parts = "/headshot.jpeg".split("/")
+        return parts[parts.length - 1] || "image"
+    })
     // Track an object URL for uploaded images to revoke when replaced/unmounted
     const imageObjectUrlRef = useRef<string | null>(null)
     const handleImageFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +25,7 @@ export default function Introductions() {
         const url = URL.createObjectURL(file)
         imageObjectUrlRef.current = url
         setImage(url)
+        setImageFilename(file.name)
     }
     useEffect(() => {
         return () => {
@@ -72,12 +77,54 @@ export default function Introductions() {
             reason: "I needed to take a science course with its lab."
         },
     ])
+    const exportToJson = () => {
+        const inferredFilename = imageFilename || (image ? (image.split("/").pop() || "image") : "image")
+        const data = {
+            firstName,
+            preferredName,
+            middleInitial,
+            lastName,
+            divider,
+            mascot,
+            image: `images/${inferredFilename}`,
+            imageCaption,
+            personalBackground,
+            professionalBackground,
+            academicBackground,
+            primaryComputer,
+            courses,
+        }
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement("a")
+        const safeName = [firstName, middleInitial, lastName].filter(Boolean).join("_") || "introduction"
+        a.href = url
+        a.download = `${safeName}.json`
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+        URL.revokeObjectURL(url)
+    }
+
     return <>
         <section>
             <h2>Form</h2>
             <form onSubmit={(e) => e.preventDefault()} className="my-6">
                 <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
-                    <h3 className="text-lg font-semibold mb-4">Edit Introduction</h3>
+                    <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
+                        <h3 className="text-lg font-semibold">Edit Introduction</h3>
+                        <div className="flex items-center gap-2">
+                            <button
+                                type="button"
+                                onClick={exportToJson}
+                                className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-900 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                                aria-label="Export introduction to JSON"
+                                title="Download your introduction data as a JSON file"
+                            >
+                                Export JSON
+                            </button>
+                        </div>
+                    </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
                         <div className="flex flex-col gap-1">
