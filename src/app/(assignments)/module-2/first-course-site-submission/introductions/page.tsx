@@ -1,8 +1,7 @@
 "use client";
 import {useState} from "react";
 import CodeHighlight from "@/components/ui/CodeHighlight";
-import Image from "next/image";
-import Header from "@/components/layout/Header";
+import Metadata from "@/components/data/Metadata";
 
 
 export default function Page() {
@@ -40,7 +39,7 @@ export default function Page() {
         }
     ])
     return <>
-        <Header title={"Introduction Generator"} message={"Generate your introduction!"}/>
+        <Metadata seoTitle={"Introduction Generator"} seoDescription={"Generate your introduction!"}/>
         <form onSubmit={(e) => e.preventDefault()} className="my-6">
             <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
                 <h3 className="text-lg font-semibold mb-4">Edit Introduction</h3>
@@ -131,7 +130,7 @@ export default function Page() {
                     </div>
                 </div>
 
-                <hr className="my-4" />
+                <hr className="my-4"/>
 
                 <div>
                     <div className="flex items-center justify-between mb-2">
@@ -147,7 +146,8 @@ export default function Page() {
                     </div>
 
                     {courses.length === 0 && (
-                        <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to include one.</p>
+                        <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to include
+                            one.</p>
                     )}
 
                     <div className="flex flex-col gap-3">
@@ -189,60 +189,63 @@ export default function Page() {
                 </div>
             </div>
         </form>
-
-            <h3>{name}</h3>
-            <figure>
-                <img src={image} alt={imageCaption} width={500} height={500}/>
-                <figcaption>{imageCaption}</figcaption>
-            </figure>
-            <ul>
-                <li><strong>Personal Background: </strong>{personalBackground}</li>
-                <li><strong>Professional Background: </strong>{professionalBackground}</li>
-                <li><strong>Academic Background: </strong>{academicBackground}</li>
-                <li><strong>Primary Computer: </strong>{primaryComputer}</li>
-                <li>
-                    <strong>Courses:</strong>
-                    <ul>
-                        {courses.map(({name, reason}, index) => <li key={index}><strong>{name}</strong>: {reason}</li>)}
-                    </ul>
-                </li>
-            </ul>
-        <CodeHighlight>
-            {`<h3>${name}</h3>\n` +
-                "  <figure>\n" +
-                "    <img\n" +
-                `      alt=\"${imageCaption}\"\n` +
-                `      src=\"${image}\"\n` +
-                "    />\n" +
-                "    <figcaption>\n" +
-                `      ${imageCaption}\n` +
-                "    </figcaption>\n" +
-                "  </figure>\n" +
-                "\n" +
-                "  <ul>\n" +
-                "    <li>\n" +
-                "      <strong>Personal Background: </strong>\n" +
-                `      ${personalBackground}\n` +
-                "    </li>\n" +
-                "    <li>\n" +
-                "      <strong>Professional Background: </strong>\n" +
-                `${professionalBackground}\n` +
-                "    </li>\n" +
-                "    <li>\n" +
-                "      <strong>Academic Background: </strong>\n" +
-                `${academicBackground}\n`+
-                "    </li>\n" +
-                "    <li>\n" +
-                "      <strong>Primary Computer: </strong>\n" +
-                `${primaryComputer}\n`+
-                "    </li>\n" +
-                "    <li>\n" +
-                "      <strong>Courses:</strong>\n" +
-                "      <ul>\n" +
-                courses.map(({name, reason}) => `        <li><strong>${name}</strong>: ${reason}</li>\n`).join("") +
-                "      </ul>\n" +
-                "    </li>\n" +
-                "  </ul>\n"}
-        </CodeHighlight>
+        <div className={"grid grid-cols-2"}>
+            <div>
+                <h3>{name}</h3>
+                <figure>
+                    <img src={image} alt={imageCaption} width={500} height={500}/>
+                    <figcaption>{imageCaption}</figcaption>
+                </figure>
+                <ul>
+                    <li><strong>Personal Background: </strong>{personalBackground}</li>
+                    <li><strong>Professional Background: </strong>{professionalBackground}</li>
+                    <li><strong>Academic Background: </strong>{academicBackground}</li>
+                    <li><strong>Primary Computer: </strong>{primaryComputer}</li>
+                    <li>
+                        <strong>Courses:</strong>
+                        <ul>
+                            {courses.map(({name, reason}, index) => <li key={index}><strong>{name}</strong>: {reason}</li>)}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <CodeHighlight>
+                {`<h3>${name}</h3>\n` +
+                    "  <figure>\n" +
+                    "    <img\n" +
+                    `      alt=\"${imageCaption}\"\n` +
+                    `      src=\"${image}\"\n` +
+                    "    />\n" +
+                    "    <figcaption>\n" +
+                    `      ${imageCaption}\n` +
+                    "    </figcaption>\n" +
+                    "  </figure>\n" +
+                    "\n" +
+                    "  <ul>\n" +
+                    "    <li>\n" +
+                    "      <strong>Personal Background: </strong>\n" +
+                    `      ${personalBackground}\n` +
+                    "    </li>\n" +
+                    "    <li>\n" +
+                    "      <strong>Professional Background: </strong>\n" +
+                    `${professionalBackground}\n` +
+                    "    </li>\n" +
+                    "    <li>\n" +
+                    "      <strong>Academic Background: </strong>\n" +
+                    `${academicBackground}\n` +
+                    "    </li>\n" +
+                    "    <li>\n" +
+                    "      <strong>Primary Computer: </strong>\n" +
+                    `${primaryComputer}\n` +
+                    "    </li>\n" +
+                    "    <li>\n" +
+                    "      <strong>Courses:</strong>\n" +
+                    "      <ul>\n" +
+                    courses.map(({name, reason}) => `        <li><strong>${name}</strong>: ${reason}</li>\n`).join("") +
+                    "      </ul>\n" +
+                    "    </li>\n" +
+                    "  </ul>\n"}
+            </CodeHighlight>
+        </div>
     </>
 }
