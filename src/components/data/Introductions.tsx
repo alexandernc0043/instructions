@@ -36,7 +36,7 @@ export default function Introductions() {
     }, [])
     const [imageCaption, setImageCaption] = useState("At the beach on the eastern coast of Florida (2024)")
     const [personalBackground, setPersonalBackground] = useState("Grew up north of Charlotte, and have always had a love of computers.")
-    const [personalStatement, setPersonalStatement] = useState("")
+    const [personalStatement, setPersonalStatement] = useState("I’m a junior at UNC Charlotte studying Computer Science with a focus in Cybersecurity. I’m excited to collaborate and build secure, user‑friendly systems this semester.")
     const [professionalBackground, setProfessionalBackground] = useState("This is my first semester as an Instructional Assistant/Teachers Assistant, but before that I was a Peer Tutor for CCI.")
     const [academicBackground, setAcademicBackground] = useState("I’m currently a Junior at UNC Charlotte studying computer science with a focus in Cybersecurity. Before that I attended Highschool in Mooresville, North Carolina.")
     const [primaryComputer, setPrimaryComputer] = useState("The laptop I use for university is a Macbook Pro M2 14 inch. I also use a custom built Windows 11 computer.")
@@ -108,355 +108,366 @@ export default function Introductions() {
     }
 
     return <>
-        <section>
-            <h2>Form</h2>
-            <form onSubmit={(e) => e.preventDefault()} className="my-6">
-                <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
-                    <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
-                        <h3 className="text-lg font-semibold">Edit Introduction</h3>
-                        <div className="flex items-center gap-2">
-                            <button
-                                type="button"
-                                onClick={exportToJson}
-                                className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-900 text-white text-sm font-medium px-3 py-1.5 rounded-md"
-                                aria-label="Export introduction to JSON"
-                                title="Download your introduction data as a JSON file"
-                            >
-                                Export JSON
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-                        <div className="col-span-full grid grid-cols-4 gap-4">
-                            <div className="flex flex-col gap-1 min-w-0">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="name">First Name</label>
-                                <input
-                                    id="name"
-                                    type="text"
-                                    value={firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
-                                    placeholder="Your name"
-                                    title="Enter your legal first name"
-                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-1 min-w-0">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle Initial</label>
-                                <input
-                                    id="middle"
-                                    type="text"
-                                    value={middleInitial}
-                                    onChange={(e) => setMiddleInitial(e.target.value)}
-                                    placeholder="Your middle initial."
-                                    title="Provide your middle initial, if applicable"
-                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-1 min-w-0">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="preferred">Preferred Name</label>
-                                <input
-                                    id="preferred"
-                                    type="text"
-                                    value={preferredName}
-                                    onChange={(e) => setPreferredName(e.target.value)}
-                                    placeholder="Your preferred name."
-                                    title="What you prefer to be called"
-                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-1 min-w-0">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last Name</label>
-                                <input
-                                    id="last"
-                                    type="text"
-                                    value={lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
-                                    placeholder="Your last name."
-                                    title="Enter your family/last name"
-                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                />
+        <div className={"grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"}>
+            <section>
+                <h2>Form</h2>
+                <form onSubmit={(e) => e.preventDefault()} className="my-6">
+                    <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
+                        <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
+                            <h3 className="text-lg font-semibold">Edit Introduction</h3>
+                            <div className="flex items-center gap-2">
+                                <button
+                                    type="button"
+                                    onClick={exportToJson}
+                                    className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-900 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                                    aria-label="Export introduction to JSON"
+                                    title="Download your introduction data as a JSON file"
+                                >
+                                    Export JSON
+                                </button>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="mascot">Mascot</label>
-                            <input
-                                id="mascot"
-                                type="text"
-                                value={mascot}
-                                onChange={(e) => setMascot(e.target.value)}
-                                placeholder="Your mascot."
-                                title="Your chosen mascot for the course"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1 sm:max-w-[10rem]">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="divider">Divider</label>
-                            <input
-                                id="divider"
-                                type="text"
-                                value={divider}
-                                onChange={(e) => setDivider(e.target.value)}
-                                placeholder="Divider"
-                                title="Symbol used to separate sections (e.g., ~ or |)"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
 
-                        <div className="flex flex-col gap-1 xl:col-span-2">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="imageFile">Upload Image</label>
-                            <input
-                                id="imageFile"
-                                type="file"
-                                accept="image/*"
-                                onChange={handleImageFileChange}
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-neutral-200 hover:file:bg-neutral-300"
-                            />
-                            <p className="text-xs text-neutral-500">PNG, JPG, or GIF. Stays local in your browser.</p>
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="imageCaption">Image
-                                Caption</label>
-                            <input
-                                id="imageCaption"
-                                type="text"
-                                value={imageCaption}
-                                onChange={(e) => setImageCaption(e.target.value)}
-                                placeholder="Short description of the image"
-                                title="Describe the image for accessibility"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="personalBackground">Personal
-                                Background</label>
-                            <textarea
-                                id="personalBackground"
-                                value={personalBackground}
-                                onChange={(e) => setPersonalBackground(e.target.value)}
-                                placeholder="A few sentences about you"
-                                title="Share a bit about your personal background"
-                                rows={3}
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="personalStatement">Personal Statement</label>
-                            <textarea
-                                id="personalStatement"
-                                value={personalStatement}
-                                onChange={(e) => setPersonalStatement(e.target.value)}
-                                placeholder="A brief personal statement or summary"
-                                title="Add a short personal statement to include in your intro"
-                                rows={3}
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="professionalBackground">Professional
-                                Background</label>
-                            <textarea
-                                id="professionalBackground"
-                                value={professionalBackground}
-                                onChange={(e) => setProfessionalBackground(e.target.value)}
-                                placeholder="Work experience or roles"
-                                title="Jobs, internships, roles, notable projects"
-                                rows={3}
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="academicBackground">Academic
-                                Background</label>
-                            <textarea
-                                id="academicBackground"
-                                value={academicBackground}
-                                onChange={(e) => setAcademicBackground(e.target.value)}
-                                placeholder="Schools, major, focus, etc."
-                                title="Academic interests, research, concentrations, honors"
-                                rows={3}
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="primaryComputer">Primary
-                                Computer</label>
-                            <input
-                                id="primaryComputer"
-                                type="text"
-                                value={primaryComputer}
-                                onChange={(e) => setPrimaryComputer(e.target.value)}
-                                placeholder="Your main device(s)"
-                                title="Your primary computer(s) or devices"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            />
-                        </div>
-                    </div>
-
-                    <hr className="my-4"/>
-
-                    <div>
-                        <div className="flex items-center justify-between mb-2">
-                            <h4 className="text-base font-semibold">Courses</h4>
-                            <button
-                                type="button"
-                                onClick={() => setCourses(prev => [...prev, {
-                                    name: "",
-                                    reason: "",
-                                    dept: "",
-                                    number: ""
-                                }])}
-                                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
-                                aria-label="Add course"
-                            >
-                                + Add Course
-                            </button>
-                        </div>
-
-                        {courses.length === 0 && (
-                            <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to
-                                include
-                                one.</p>
-                        )}
-
-                        <div className="flex flex-col gap-3 sm:gap-4">
-                            {courses.map((c, idx) => (
-                                <div key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
-                                    <div className="md:col-span-2 flex flex-col gap-1">
-                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-dept-${idx}`}>Department Prefix</label>
-                                        <input
-                                            id={`course-dept-${idx}`}
-                                            type="text"
-                                            value={c.dept}
-                                            onChange={(e) => {
-                                                const v = e.target.value;
-                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                    ...pc,
-                                                    dept: v
-                                                }) : pc));
-                                            }}
-                                            placeholder="Prefex"
-                                            title="Department prefix (e.g., ITIS, MATH)"
-                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        />
-                                    </div>
-                                    <div className="md:col-span-2 flex flex-col gap-1">
-                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-number-${idx}`}>Course Number</label>
-                                        <input
-                                            id={`course-number-${idx}`}
-                                            type="text"
-                                            value={c.number}
-                                            onChange={(e) => {
-                                                const v = e.target.value;
-                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                    ...pc,
-                                                    number: v
-                                                }) : pc));
-                                            }}
-                                            placeholder="####"
-                                            title="Numeric course identifier (e.g., 3135)"
-                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        />
-                                    </div>
-                                    <div className="md:col-span-3 flex flex-col gap-1">
-                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-name-${idx}`}>Course Name</label>
-                                        <input
-                                            id={`course-name-${idx}`}
-                                            type="text"
-                                            value={c.name}
-                                            onChange={(e) => {
-                                                const v = e.target.value;
-                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                    ...pc,
-                                                    name: v
-                                                }) : pc));
-                                            }}
-                                            placeholder="Name of the course..."
-                                            title="Full course title (no section)"
-                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        />
-                                    </div>
-                                    <div className="md:col-span-4 flex flex-col gap-1">
-                                        <label className="font-medium text-sm text-neutral-700" htmlFor={`course-reason-${idx}`}>Reason</label>
-                                        <input
-                                            id={`course-reason-${idx}`}
-                                            type="text"
-                                            value={c.reason}
-                                            onChange={(e) => {
-                                                const v = e.target.value;
-                                                setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                    ...pc,
-                                                    reason: v
-                                                }) : pc));
-                                            }}
-                                            placeholder="Why you're taking the course..."
-                                            title="Why you selected or need this course"
-                                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        />
-                                    </div>
-                                    <div className="md:col-span-1 flex md:justify-end">
-                                        <button
-                                            type="button"
-                                            onClick={() => setCourses(prev => prev.filter((_, i) => i !== idx))}
-                                            className="w-full md:w-auto bg-neutral-200 hover:bg-neutral-300 text-neutral-800 text-sm font-medium px-3 py-2 rounded-md"
-                                            aria-label={`Remove course ${idx + 1}`}
-                                        >
-                                            Remove
-                                        </button>
-                                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+                            <div className="col-span-full grid grid-cols-4 gap-4">
+                                <div className="flex flex-col gap-1 min-w-0">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="name">First Name</label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                        placeholder="Your name"
+                                        title="Enter your legal first name"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
                                 </div>
-                            ))}
+                                <div className="flex flex-col gap-1 min-w-0">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle Initial</label>
+                                    <input
+                                        id="middle"
+                                        type="text"
+                                        value={middleInitial}
+                                        onChange={(e) => setMiddleInitial(e.target.value)}
+                                        placeholder="Your middle initial."
+                                        title="Provide your middle initial, if applicable"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-1 min-w-0">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="preferred">Preferred Name</label>
+                                    <input
+                                        id="preferred"
+                                        type="text"
+                                        value={preferredName}
+                                        onChange={(e) => setPreferredName(e.target.value)}
+                                        placeholder="Your preferred name."
+                                        title="What you prefer to be called"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-1 min-w-0">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last Name</label>
+                                    <input
+                                        id="last"
+                                        type="text"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                        placeholder="Your last name."
+                                        title="Enter your family/last name"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="flex flex-col gap-1">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="mascot">Mascot</label>
+                                    <input
+                                        id="mascot"
+                                        type="text"
+                                        value={mascot}
+                                        onChange={(e) => setMascot(e.target.value)}
+                                        placeholder="Your mascot."
+                                        title="Your chosen mascot for the course"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="divider">Divider</label>
+                                    <input
+                                        id="divider"
+                                        type="text"
+                                        value={divider}
+                                        onChange={(e) => setDivider(e.target.value)}
+                                        placeholder="Divider"
+                                        title="Symbol used to separate sections (e.g., ~ or |)"
+                                        className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-1 col-span-full">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="imageFile">Upload Image</label>
+                                <input
+                                    id="imageFile"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageFileChange}
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-neutral-200 hover:file:bg-neutral-300"
+                                />
+                                <p className="text-xs text-neutral-500">PNG, JPG, or GIF. Stays local in your browser.</p>
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="imageCaption">Image
+                                    Caption</label>
+                                <input
+                                    id="imageCaption"
+                                    type="text"
+                                    value={imageCaption}
+                                    onChange={(e) => setImageCaption(e.target.value)}
+                                    placeholder="Short description of the image"
+                                    title="Describe the image for accessibility"
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="personalBackground">Personal
+                                    Background</label>
+                                <textarea
+                                    id="personalBackground"
+                                    value={personalBackground}
+                                    onChange={(e) => setPersonalBackground(e.target.value)}
+                                    placeholder="A few sentences about you"
+                                    title="Share a bit about your personal background"
+                                    rows={3}
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="personalStatement">Personal Statement</label>
+                                <textarea
+                                    id="personalStatement"
+                                    value={personalStatement}
+                                    onChange={(e) => setPersonalStatement(e.target.value)}
+                                    placeholder="A brief personal statement or summary"
+                                    title="Add a short personal statement to include in your intro"
+                                    rows={3}
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="professionalBackground">Professional
+                                    Background</label>
+                                <textarea
+                                    id="professionalBackground"
+                                    value={professionalBackground}
+                                    onChange={(e) => setProfessionalBackground(e.target.value)}
+                                    placeholder="Work experience or roles"
+                                    title="Jobs, internships, roles, notable projects"
+                                    rows={3}
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="academicBackground">Academic
+                                    Background</label>
+                                <textarea
+                                    id="academicBackground"
+                                    value={academicBackground}
+                                    onChange={(e) => setAcademicBackground(e.target.value)}
+                                    placeholder="Schools, major, focus, etc."
+                                    title="Academic interests, research, concentrations, honors"
+                                    rows={3}
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="primaryComputer">Primary
+                                    Computer</label>
+                                <input
+                                    id="primaryComputer"
+                                    type="text"
+                                    value={primaryComputer}
+                                    onChange={(e) => setPrimaryComputer(e.target.value)}
+                                    placeholder="Your main device(s)"
+                                    title="Your primary computer(s) or devices"
+                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                />
+                            </div>
                         </div>
+
+                        <hr className="my-4"/>
+
+                        <div>
+                            <div className="flex items-center justify-between mb-2">
+                                <h4 className="text-base font-semibold">Courses</h4>
+                                <button
+                                    type="button"
+                                    onClick={() => setCourses(prev => [...prev, {
+                                        name: "",
+                                        reason: "",
+                                        dept: "",
+                                        number: ""
+                                    }])}
+                                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                                    aria-label="Add course"
+                                >
+                                    + Add Course
+                                </button>
+                            </div>
+
+                            {courses.length === 0 && (
+                                <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to
+                                    include
+                                    one.</p>
+                            )}
+
+                            <div className="flex flex-col gap-3 sm:gap-4">
+                                {courses.map((c, idx) => (
+                                    <div key={idx} className="border border-neutral-200 rounded-md p-3 sm:p-4 bg-white">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-sm font-medium text-neutral-700">Course {idx + 1}</span>
+                                            <button
+                                                type="button"
+                                                onClick={() => setCourses(prev => prev.filter((_, i) => i !== idx))}
+                                                className="inline-flex items-center text-sm text-neutral-700 hover:bg-neutral-100 px-2 py-1 rounded-md"
+                                                aria-label={`Remove course ${idx + 1}`}
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
+                                        <div className="md:col-span-2 flex flex-col gap-1">
+                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-dept-${idx}`}>Prefix</label>
+                                            <input
+                                                id={`course-dept-${idx}`}
+                                                type="text"
+                                                value={c.dept}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                        ...pc,
+                                                        dept: v
+                                                    }) : pc));
+                                                }}
+                                                placeholder="Prefix"
+                                                title="Department prefix (e.g., ITIS, MATH)"
+                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="md:col-span-2 flex flex-col gap-1">
+                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-number-${idx}`}>Course #</label>
+                                            <input
+                                                id={`course-number-${idx}`}
+                                                type="text"
+                                                value={c.number}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                        ...pc,
+                                                        number: v
+                                                    }) : pc));
+                                                }}
+                                                placeholder="####"
+                                                title="Numeric course identifier (e.g., 3135)"
+                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="md:col-span-4 flex flex-col gap-1">
+                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-name-${idx}`}>Course Name</label>
+                                            <input
+                                                id={`course-name-${idx}`}
+                                                type="text"
+                                                value={c.name}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                        ...pc,
+                                                        name: v
+                                                    }) : pc));
+                                                }}
+                                                placeholder="Name of the course..."
+                                                title="Full course title (no section)"
+                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="md:col-span-4 flex flex-col gap-1">
+                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-reason-${idx}`}>Reason</label>
+                                            <input
+                                                id={`course-reason-${idx}`}
+                                                type="text"
+                                                value={c.reason}
+                                                onChange={(e) => {
+                                                    const v = e.target.value;
+                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                        ...pc,
+                                                        reason: v
+                                                    }) : pc));
+                                                }}
+                                                placeholder="Why you're taking the course..."
+                                                title="Why you selected or need this course"
+                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <h2>Example</h2>
+                <div className="my-6 bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
+                    <div className="space-y-4">
+                <p className="text-sm text-neutral-700">I understand that what I put here is publicly available on the web and I won’t put anything here I don’t
+                    want the public to see {divider} {[
+                        firstName?.trim()?.[0],
+                        (middleInitial || "").trim()?.[0],
+                        lastName?.trim()?.[0]
+                    ].filter(Boolean).join("")} {divider} {new Date().toLocaleDateString()}</p>
+                <h3 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
+                {personalStatement && (
+                    <p>{personalStatement}</p>
+                )}
+                <figure className={"m-auto w-100"}>
+                    {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
+                        <img src={image} alt={imageCaption} width={500} height={500}/>}
+                    <figcaption className={"flex justify-center mt-2 text-sm text-neutral-600"}><em>{imageCaption}</em></figcaption>
+                </figure>
+                <ul className="list-disc pl-5 space-y-1">
+                    <li><strong>Personal Background: </strong>{personalBackground === "" ? "None." : personalBackground}
+                    </li>
+                    <li><strong>Professional
+                        Background: </strong>{professionalBackground === "" ? "None." : professionalBackground}</li>
+                    <li><strong>Academic Background: </strong>{academicBackground === "" ? "None." : academicBackground}
+                    </li>
+                    <li><strong>Primary Computer: </strong>{primaryComputer === "" ? "None." : primaryComputer}</li>
+                    <li>
+                        <strong>Courses:</strong>
+                        <ul className="list-disc pl-5 mt-1 space-y-1">
+                            {courses.length === 0 ? <li>No courses.</li> : courses.map(({
+                                                                                            dept,
+                                                                                            number,
+                                                                                            name,
+                                                                                            reason
+                                                                                        }, index) => <li
+                                key={index}><strong>{dept} {number} &mdash; {name}</strong>: {reason}</li>)}
+                        </ul>
+                    </li>
+                </ul>
                     </div>
                 </div>
-            </form>
-        </section>
-
-        <section>
-            <h2>Example</h2>
-            <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t
-                want the public to see {divider} {[
-                firstName?.trim()?.[0],
-                (middleInitial || "").trim()?.[0],
-                lastName?.trim()?.[0]
-            ].filter(Boolean).join(" ")} {divider} {new Date().toLocaleDateString()}</p>
-            <h3>{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
-            {personalStatement && (
-                <p>{personalStatement}</p>
-            )}
-            <figure className={"m-auto w-100"}>
-                {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
-                    <img src={image} alt={imageCaption} width={500} height={500}/>}
-                <figcaption className={"flex justify-center"}><em>{imageCaption}</em></figcaption>
-            </figure>
-            <ul>
-                <li><strong>Personal Background: </strong>{personalBackground === "" ? "None." : personalBackground}
-                </li>
-                <li><strong>Professional
-                    Background: </strong>{professionalBackground === "" ? "None." : professionalBackground}</li>
-                <li><strong>Academic Background: </strong>{academicBackground === "" ? "None." : academicBackground}
-                </li>
-                <li><strong>Primary Computer: </strong>{primaryComputer === "" ? "None." : primaryComputer}</li>
-                <li>
-                    <strong>Courses:</strong>
-                    <ul>
-                        {courses.length === 0 ? <li>No courses.</li> : courses.map(({
-                                                                                        dept,
-                                                                                        number,
-                                                                                        name,
-                                                                                        reason
-                                                                                    }, index) => <li
-                            key={index}><strong>{dept} {number} &mdash; {name}</strong>: {reason}</li>)}
-                    </ul>
-                </li>
-            </ul>
-        </section>
+            </section>
+        </div>
         {/*<section>*/}
         {/*    <h2>Code</h2>*/}
         {/*    <CodeHighlight>*/}
