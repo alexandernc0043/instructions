@@ -1,5 +1,5 @@
 "use client";
-import React, {createContext, ReactNode, useContext, useEffect, useMemo, useState} from "react";
+import React, {createContext, useContext, useEffect, useMemo, useState} from "react";
 import {usePathname} from "next/navigation";
 import Header from "@/components/layout/Header";
 

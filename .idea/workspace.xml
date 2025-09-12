@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-3/fcc3-css/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-4/createDesignFirm/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(modules)/module-3/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/data/Introductions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/fcc1-html/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/fcc1-html/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0a/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0b/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0b/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0c/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0c/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0d/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-1/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-4/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-4/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="HTML File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -72,11 +66,11 @@
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(assignments)/module-2" />
+      <recent name="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-4" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-0" />
       <recent name="$PROJECT_DIR$/src/app/modules" />
-      <recent name="$PROJECT_DIR$/src/app/module-0" />
-      <recent name="$PROJECT_DIR$/src/app/assignments" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm dev">
@@ -127,6 +121,8 @@
       <workItem from="1757524106294" duration="188000" />
       <workItem from="1757530242271" duration="1767000" />
       <workItem from="1757622026868" duration="1210000" />
+      <workItem from="1757646569472" duration="5082000" />
+      <workItem from="1757688171847" duration="3453000" />
     </task>
     <servers />
   </component>
