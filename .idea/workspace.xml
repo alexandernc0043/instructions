@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/data/Introductions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/HeaderProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data/Introductions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data/Introductions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +63,11 @@
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission" />
       <recent name="$PROJECT_DIR$/src/app/(assignments)/module-2" />
       <recent name="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-4" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-0" />
-      <recent name="$PROJECT_DIR$/src/app/modules" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm dev">
@@ -122,7 +119,7 @@
       <workItem from="1757530242271" duration="1767000" />
       <workItem from="1757622026868" duration="1210000" />
       <workItem from="1757646569472" duration="5082000" />
-      <workItem from="1757688171847" duration="3453000" />
+      <workItem from="1757688171847" duration="7328000" />
     </task>
     <servers />
   </component>
