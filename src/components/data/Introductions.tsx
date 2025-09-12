@@ -1,5 +1,5 @@
 "use client"
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 export default function Introductions() {
     const [firstName, setFirstName] = useState("Alexander");
@@ -9,6 +9,26 @@ export default function Introductions() {
     const [divider, setDivider] = useState("~");
     const [mascot, setMascot] = useState("Advanced Pegasus");
     const [image, setImage] = useState("/headshot.jpeg")
+    // Track an object URL for uploaded images to revoke when replaced/unmounted
+    const imageObjectUrlRef = useRef<string | null>(null)
+    const handleImageFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]
+        if (!file) return
+        // Revoke previous object URL to avoid memory leaks
+        if (imageObjectUrlRef.current) {
+            URL.revokeObjectURL(imageObjectUrlRef.current)
+        }
+        const url = URL.createObjectURL(file)
+        imageObjectUrlRef.current = url
+        setImage(url)
+    }
+    useEffect(() => {
+        return () => {
+            if (imageObjectUrlRef.current) {
+                URL.revokeObjectURL(imageObjectUrlRef.current)
+            }
+        }
+    }, [])
     const [imageCaption, setImageCaption] = useState("At the beach on the eastern coast of Florida (2024)")
     const [personalBackground, setPersonalBackground] = useState("Grew up north of Charlotte, and have always had a love of computers.")
     const [professionalBackground, setProfessionalBackground] = useState("This is my first semester as an Instructional Assistant/Teachers Assistant, but before that I was a Peer Tutor for CCI.")
@@ -118,15 +138,15 @@ export default function Introductions() {
                         </div>
 
                         <div className="flex flex-col gap-1 xl:col-span-2">
-                            <label className="font-medium text-sm text-neutral-700" htmlFor="image">Image URL</label>
+                            <label className="font-medium text-sm text-neutral-700" htmlFor="imageFile">Upload Image</label>
                             <input
-                                id="image"
-                                type="text"
-                                value={image}
-                                onChange={(e) => setImage(e.target.value)}
-                                placeholder="/headshot.jpeg"
-                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                id="imageFile"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageFileChange}
+                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-neutral-200 hover:file:bg-neutral-300"
                             />
+                            <p className="text-xs text-neutral-500">PNG, JPG, or GIF. Stays local in your browser.</p>
                         </div>
 
                         <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
