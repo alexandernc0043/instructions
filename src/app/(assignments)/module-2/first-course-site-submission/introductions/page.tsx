@@ -66,7 +66,7 @@ export default function Page() {
                                 type="text"
                                 value={image}
                                 onChange={(e) => setImage(e.target.value)}
-                                placeholder="/headshot.jpeg or https://..."
+                                placeholder="/headshot.jpeg"
                                 className="border border-neutral-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -198,7 +198,7 @@ export default function Page() {
                 <h2>Example</h2>
                 <h3>{name}</h3>
                 <figure>
-                    <img src={image} alt={imageCaption} width={500} height={500}/>
+                    {image === ""? <img src={null} alt={imageCaption} width={500} height={500}/>: <img src={image} alt={imageCaption} width={500} height={500}/>}
                     <figcaption>{imageCaption}</figcaption>
                 </figure>
                 <ul>
