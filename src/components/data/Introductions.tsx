@@ -1,5 +1,6 @@
 "use client"
 import {useEffect, useRef, useState} from "react";
+import CodeHighlight from "@/components/ui/CodeHighlight";
 
 export default function Introductions() {
     const [firstName, setFirstName] = useState("Alexander");
@@ -76,33 +77,37 @@ export default function Introductions() {
             reason: "I needed to take a science course with its lab."
         },
     ])
-    const exportToJson = () => {
-        const inferredFilename = imageFilename || (image ? (image.split("/").pop() || "image") : "image")
-        const data = {
-            firstName,
-            preferredName,
-            middleInitial,
-            lastName,
-            divider,
-            mascot,
-            image: `images/${inferredFilename}`,
-            imageCaption,
-            personalBackground,
-            professionalBackground,
-            academicBackground,
-            primaryComputer,
-            courses,
-        }
-        const blob = new Blob([JSON.stringify(data, null, 2)], {type: "application/json"})
-        const url = URL.createObjectURL(blob)
-        const a = document.createElement("a")
-        const safeName = [firstName, middleInitial, lastName].filter(Boolean).join("_") || "introduction"
-        a.href = url
-        a.download = `${safeName}.json`
-        document.body.appendChild(a)
-        a.click()
-        a.remove()
-        URL.revokeObjectURL(url)
+    // Compute JSON data and show it inline instead of downloading
+    const inferredFilename = imageFilename || (image ? (image.split("/").pop() || "image") : "image")
+    const data = {
+        firstName,
+        preferredName,
+        middleInitial,
+        lastName,
+        divider,
+        mascot,
+        image: `images/${inferredFilename}`,
+        imageCaption,
+        personalBackground,
+        professionalBackground,
+        academicBackground,
+        primaryComputer,
+        courses,
+    }
+
+    const [showJson, setShowJson] = useState(false)
+    const jsonSectionRef = useRef<HTMLDivElement | null>(null)
+    const toggleShowJson = () => {
+        setShowJson(prev => {
+            const next = !prev
+            if (!prev) {
+                // If revealing the JSON, scroll into view on next paint
+                requestAnimationFrame(() => {
+                    jsonSectionRef.current?.scrollIntoView({behavior: "smooth", block: "start"})
+                })
+            }
+            return next
+        })
     }
 
     return <>
@@ -116,12 +121,13 @@ export default function Introductions() {
                             <div className="flex items-center gap-2">
                                 <button
                                     type="button"
-                                    onClick={exportToJson}
+                                    onClick={toggleShowJson}
                                     className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-900 text-white text-sm font-medium px-3 py-1.5 rounded-md"
-                                    aria-label="Export introduction to JSON"
-                                    title="Download your introduction data as a JSON file"
+                                    aria-pressed={showJson}
+                                    aria-label={showJson ? "Hide introduction JSON" : "Show introduction JSON"}
+                                    title={showJson ? "Hide your introduction data" : "Show your introduction data as JSON"}
                                 >
-                                    Export JSON
+                                    {showJson ? "Hide JSON" : "Show JSON"}
                                 </button>
                             </div>
                         </div>
@@ -449,15 +455,15 @@ export default function Introductions() {
                                 lastName?.trim()?.[0]
                             ].filter(Boolean).join("")} {divider} {new Date().toLocaleDateString()}</p>
                         <h3 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
-                        {personalStatement && (
-                            <p>{personalStatement}</p>
-                        )}
                         <figure className={"m-auto w-100"}>
                             {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
                                 <img src={image} alt={imageCaption} width={500} height={500}/>}
                             <figcaption className={"flex justify-center mt-2 text-sm text-neutral-600"}>
                                 <em>{imageCaption}</em></figcaption>
                         </figure>
+                        {personalStatement && (
+                            <p>{personalStatement}</p>
+                        )}
                         <ul className="list-disc pl-5 space-y-1">
                             <li><strong>Personal
                                 Background: </strong>{personalBackground === "" ? "None." : personalBackground}
@@ -487,6 +493,15 @@ export default function Introductions() {
                 </div>
             </section>
         </div>
+        {showJson && (
+            <section ref={jsonSectionRef}>
+                <h2>JSON</h2>
+                <p className="text-sm text-neutral-600 mt-2">Copy this JSON into your site repository as needed.</p>
+                <CodeHighlight>
+                    {JSON.stringify(data, null, 2)}
+                </CodeHighlight>
+            </section>
+        )}
         {/*<section>*/}
         {/*    <h2>Code</h2>*/}
         {/*    <CodeHighlight>*/}
