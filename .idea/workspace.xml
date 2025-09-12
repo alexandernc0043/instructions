@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="" />
+    <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-3/fcc3-css/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-4/createDesignFirm/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(modules)/module-3/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/fcc1-html/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/fcc1-html/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0a/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0a/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0b/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0b/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0c/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0c/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-0/m0d/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0d/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-0/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-1/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(modules)/module-4/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(modules)/module-4/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +28,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,12 +45,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alexanderp/University/Junior Year 2025-2026/Fall 2025/WORK-ITIS3135/instructions/src/app/(assignments)/module-3/fcc3-css&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -51,6 +67,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(assignments)/module-3/fcc3-css" />
+      <recent name="$PROJECT_DIR$/src/app/(modules)/module-3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-4" />
       <recent name="$PROJECT_DIR$/src/app/(modules)/module-0" />
@@ -104,6 +124,9 @@
       <workItem from="1757427186644" duration="55000" />
       <workItem from="1757427331410" duration="2646000" />
       <workItem from="1757513911037" duration="1685000" />
+      <workItem from="1757524106294" duration="188000" />
+      <workItem from="1757530242271" duration="1767000" />
+      <workItem from="1757622026868" duration="1210000" />
     </task>
     <servers />
   </component>

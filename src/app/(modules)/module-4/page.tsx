@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function Index() {
     const routes = [
         {text: "About Page - Mascot Company", path: "/module-4/aboutPageMC"},
+        {text: "Create your Design Firm One Page Site", path:"/module-4/createDesignFirm"}
     ] as routeType[];
     return (
         <>

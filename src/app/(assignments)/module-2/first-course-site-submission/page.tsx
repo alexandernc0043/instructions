@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "First Course Site Submission",
@@ -15,6 +16,7 @@ export default function FirstCourseSiteSubmission() {
           the course instructions. If additional specifics are needed here, please provide the latest text and I will
           incorporate it.
         </p>
+          <Link href={"/module-2/first-course-site-submission/introductions"}>INTRODUCTION GENERATOR</Link>
       </section>
       <hr />
       <section>
