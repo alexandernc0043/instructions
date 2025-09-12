@@ -13,12 +13,10 @@ export default function Introductions() {
         const parts = "/headshot.jpeg".split("/")
         return parts[parts.length - 1] || "image"
     })
-    // Track an object URL for uploaded images to revoke when replaced/unmounted
     const imageObjectUrlRef = useRef<string | null>(null)
     const handleImageFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (!file) return
-        // Revoke previous object URL to avoid memory leaks
         if (imageObjectUrlRef.current) {
             URL.revokeObjectURL(imageObjectUrlRef.current)
         }
@@ -95,7 +93,7 @@ export default function Introductions() {
             primaryComputer,
             courses,
         }
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" })
+        const blob = new Blob([JSON.stringify(data, null, 2)], {type: "application/json"})
         const url = URL.createObjectURL(blob)
         const a = document.createElement("a")
         const safeName = [firstName, middleInitial, lastName].filter(Boolean).join("_") || "introduction"
@@ -131,7 +129,8 @@ export default function Introductions() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
                             <div className="col-span-full grid grid-cols-4 gap-4">
                                 <div className="flex flex-col gap-1 min-w-0">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="name">First Name</label>
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="name">First
+                                        Name</label>
                                     <input
                                         id="name"
                                         type="text"
@@ -143,7 +142,8 @@ export default function Introductions() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1 min-w-0">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle Initial</label>
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="middle">Middle
+                                        Initial</label>
                                     <input
                                         id="middle"
                                         type="text"
@@ -155,7 +155,8 @@ export default function Introductions() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1 min-w-0">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="preferred">Preferred Name</label>
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="preferred">Preferred
+                                        Name</label>
                                     <input
                                         id="preferred"
                                         type="text"
@@ -167,7 +168,8 @@ export default function Introductions() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1 min-w-0">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last Name</label>
+                                    <label className="font-medium text-sm text-neutral-700" htmlFor="last">Last
+                                        Name</label>
                                     <input
                                         id="last"
                                         type="text"
@@ -181,7 +183,8 @@ export default function Introductions() {
                             </div>
                             <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="flex flex-col gap-1">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="mascot">Mascot</label>
+                                    <label className="font-medium text-sm text-neutral-700"
+                                           htmlFor="mascot">Mascot</label>
                                     <input
                                         id="mascot"
                                         type="text"
@@ -193,7 +196,8 @@ export default function Introductions() {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <label className="font-medium text-sm text-neutral-700" htmlFor="divider">Divider</label>
+                                    <label className="font-medium text-sm text-neutral-700"
+                                           htmlFor="divider">Divider</label>
                                     <input
                                         id="divider"
                                         type="text"
@@ -207,7 +211,8 @@ export default function Introductions() {
                             </div>
 
                             <div className="flex flex-col gap-1 col-span-full">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="imageFile">Upload Image</label>
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="imageFile">Upload
+                                    Image</label>
                                 <input
                                     id="imageFile"
                                     type="file"
@@ -215,7 +220,8 @@ export default function Introductions() {
                                     onChange={handleImageFileChange}
                                     className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-neutral-200 hover:file:bg-neutral-300"
                                 />
-                                <p className="text-xs text-neutral-500">PNG, JPG, or GIF. Stays local in your browser.</p>
+                                <p className="text-xs text-neutral-500">PNG, JPG, or GIF. Stays local in your
+                                    browser.</p>
                             </div>
 
                             <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
@@ -247,7 +253,8 @@ export default function Introductions() {
                             </div>
 
                             <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="personalStatement">Personal Statement</label>
+                                <label className="font-medium text-sm text-neutral-700" htmlFor="personalStatement">Personal
+                                    Statement</label>
                                 <textarea
                                     id="personalStatement"
                                     value={personalStatement}
@@ -260,7 +267,8 @@ export default function Introductions() {
                             </div>
 
                             <div className="sm:col-span-2 xl:col-span-3 flex flex-col gap-1">
-                                <label className="font-medium text-sm text-neutral-700" htmlFor="professionalBackground">Professional
+                                <label className="font-medium text-sm text-neutral-700"
+                                       htmlFor="professionalBackground">Professional
                                     Background</label>
                                 <textarea
                                     id="professionalBackground"
@@ -332,7 +340,8 @@ export default function Introductions() {
                                 {courses.map((c, idx) => (
                                     <div key={idx} className="border border-neutral-200 rounded-md p-3 sm:p-4 bg-white">
                                         <div className="flex items-center justify-between mb-2">
-                                            <span className="text-sm font-medium text-neutral-700">Course {idx + 1}</span>
+                                            <span
+                                                className="text-sm font-medium text-neutral-700">Course {idx + 1}</span>
                                             <button
                                                 type="button"
                                                 onClick={() => setCourses(prev => prev.filter((_, i) => i !== idx))}
@@ -343,78 +352,82 @@ export default function Introductions() {
                                             </button>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
-                                        <div className="md:col-span-2 flex flex-col gap-1">
-                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-dept-${idx}`}>Prefix</label>
-                                            <input
-                                                id={`course-dept-${idx}`}
-                                                type="text"
-                                                value={c.dept}
-                                                onChange={(e) => {
-                                                    const v = e.target.value;
-                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                        ...pc,
-                                                        dept: v
-                                                    }) : pc));
-                                                }}
-                                                placeholder="Prefix"
-                                                title="Department prefix (e.g., ITIS, MATH)"
-                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                            />
-                                        </div>
-                                        <div className="md:col-span-2 flex flex-col gap-1">
-                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-number-${idx}`}>Course #</label>
-                                            <input
-                                                id={`course-number-${idx}`}
-                                                type="text"
-                                                value={c.number}
-                                                onChange={(e) => {
-                                                    const v = e.target.value;
-                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                        ...pc,
-                                                        number: v
-                                                    }) : pc));
-                                                }}
-                                                placeholder="####"
-                                                title="Numeric course identifier (e.g., 3135)"
-                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                            />
-                                        </div>
-                                        <div className="md:col-span-4 flex flex-col gap-1">
-                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-name-${idx}`}>Course Name</label>
-                                            <input
-                                                id={`course-name-${idx}`}
-                                                type="text"
-                                                value={c.name}
-                                                onChange={(e) => {
-                                                    const v = e.target.value;
-                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                        ...pc,
-                                                        name: v
-                                                    }) : pc));
-                                                }}
-                                                placeholder="Name of the course..."
-                                                title="Full course title (no section)"
-                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                            />
-                                        </div>
-                                        <div className="md:col-span-4 flex flex-col gap-1">
-                                            <label className="font-medium text-sm text-neutral-700" htmlFor={`course-reason-${idx}`}>Reason</label>
-                                            <input
-                                                id={`course-reason-${idx}`}
-                                                type="text"
-                                                value={c.reason}
-                                                onChange={(e) => {
-                                                    const v = e.target.value;
-                                                    setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                        ...pc,
-                                                        reason: v
-                                                    }) : pc));
-                                                }}
-                                                placeholder="Why you're taking the course..."
-                                                title="Why you selected or need this course"
-                                                className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                            />
-                                        </div>
+                                            <div className="md:col-span-2 flex flex-col gap-1">
+                                                <label className="font-medium text-sm text-neutral-700"
+                                                       htmlFor={`course-dept-${idx}`}>Prefix</label>
+                                                <input
+                                                    id={`course-dept-${idx}`}
+                                                    type="text"
+                                                    value={c.dept}
+                                                    onChange={(e) => {
+                                                        const v = e.target.value;
+                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                            ...pc,
+                                                            dept: v
+                                                        }) : pc));
+                                                    }}
+                                                    placeholder="Prefix"
+                                                    title="Department prefix (e.g., ITIS, MATH)"
+                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                                />
+                                            </div>
+                                            <div className="md:col-span-2 flex flex-col gap-1">
+                                                <label className="font-medium text-sm text-neutral-700"
+                                                       htmlFor={`course-number-${idx}`}>Course #</label>
+                                                <input
+                                                    id={`course-number-${idx}`}
+                                                    type="text"
+                                                    value={c.number}
+                                                    onChange={(e) => {
+                                                        const v = e.target.value;
+                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                            ...pc,
+                                                            number: v
+                                                        }) : pc));
+                                                    }}
+                                                    placeholder="####"
+                                                    title="Numeric course identifier (e.g., 3135)"
+                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                                />
+                                            </div>
+                                            <div className="md:col-span-4 flex flex-col gap-1">
+                                                <label className="font-medium text-sm text-neutral-700"
+                                                       htmlFor={`course-name-${idx}`}>Course Name</label>
+                                                <input
+                                                    id={`course-name-${idx}`}
+                                                    type="text"
+                                                    value={c.name}
+                                                    onChange={(e) => {
+                                                        const v = e.target.value;
+                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                            ...pc,
+                                                            name: v
+                                                        }) : pc));
+                                                    }}
+                                                    placeholder="Name of the course..."
+                                                    title="Full course title (no section)"
+                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                                />
+                                            </div>
+                                            <div className="md:col-span-4 flex flex-col gap-1">
+                                                <label className="font-medium text-sm text-neutral-700"
+                                                       htmlFor={`course-reason-${idx}`}>Reason</label>
+                                                <input
+                                                    id={`course-reason-${idx}`}
+                                                    type="text"
+                                                    value={c.reason}
+                                                    onChange={(e) => {
+                                                        const v = e.target.value;
+                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
+                                                            ...pc,
+                                                            reason: v
+                                                        }) : pc));
+                                                    }}
+                                                    placeholder="Why you're taking the course..."
+                                                    title="Why you selected or need this course"
+                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -428,42 +441,48 @@ export default function Introductions() {
                 <h2>Example</h2>
                 <div className="my-6 bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
                     <div className="space-y-4">
-                <p className="text-sm text-neutral-700">I understand that what I put here is publicly available on the web and I won’t put anything here I don’t
-                    want the public to see {divider} {[
-                        firstName?.trim()?.[0],
-                        (middleInitial || "").trim()?.[0],
-                        lastName?.trim()?.[0]
-                    ].filter(Boolean).join("")} {divider} {new Date().toLocaleDateString()}</p>
-                <h3 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
-                {personalStatement && (
-                    <p>{personalStatement}</p>
-                )}
-                <figure className={"m-auto w-100"}>
-                    {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
-                        <img src={image} alt={imageCaption} width={500} height={500}/>}
-                    <figcaption className={"flex justify-center mt-2 text-sm text-neutral-600"}><em>{imageCaption}</em></figcaption>
-                </figure>
-                <ul className="list-disc pl-5 space-y-1">
-                    <li><strong>Personal Background: </strong>{personalBackground === "" ? "None." : personalBackground}
-                    </li>
-                    <li><strong>Professional
-                        Background: </strong>{professionalBackground === "" ? "None." : professionalBackground}</li>
-                    <li><strong>Academic Background: </strong>{academicBackground === "" ? "None." : academicBackground}
-                    </li>
-                    <li><strong>Primary Computer: </strong>{primaryComputer === "" ? "None." : primaryComputer}</li>
-                    <li>
-                        <strong>Courses:</strong>
-                        <ul className="list-disc pl-5 mt-1 space-y-1">
-                            {courses.length === 0 ? <li>No courses.</li> : courses.map(({
-                                                                                            dept,
-                                                                                            number,
-                                                                                            name,
-                                                                                            reason
-                                                                                        }, index) => <li
-                                key={index}><strong>{dept} {number} &mdash; {name}</strong>: {reason}</li>)}
+                        <p className="text-sm text-neutral-700">I understand that what I put here is publicly available
+                            on the web and I won’t put anything here I don’t
+                            want the public to see {divider} {[
+                                firstName?.trim()?.[0],
+                                (middleInitial || "").trim()?.[0],
+                                lastName?.trim()?.[0]
+                            ].filter(Boolean).join("")} {divider} {new Date().toLocaleDateString()}</p>
+                        <h3 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
+                        {personalStatement && (
+                            <p>{personalStatement}</p>
+                        )}
+                        <figure className={"m-auto w-100"}>
+                            {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
+                                <img src={image} alt={imageCaption} width={500} height={500}/>}
+                            <figcaption className={"flex justify-center mt-2 text-sm text-neutral-600"}>
+                                <em>{imageCaption}</em></figcaption>
+                        </figure>
+                        <ul className="list-disc pl-5 space-y-1">
+                            <li><strong>Personal
+                                Background: </strong>{personalBackground === "" ? "None." : personalBackground}
+                            </li>
+                            <li><strong>Professional
+                                Background: </strong>{professionalBackground === "" ? "None." : professionalBackground}
+                            </li>
+                            <li><strong>Academic
+                                Background: </strong>{academicBackground === "" ? "None." : academicBackground}
+                            </li>
+                            <li><strong>Primary Computer: </strong>{primaryComputer === "" ? "None." : primaryComputer}
+                            </li>
+                            <li>
+                                <strong>Courses:</strong>
+                                <ul className="list-disc pl-5 mt-1 space-y-1">
+                                    {courses.length === 0 ? <li>No courses.</li> : courses.map(({
+                                                                                                  dept,
+                                                                                                  number,
+                                                                                                  name,
+                                                                                                  reason
+                                                                                              }, index) => <li
+                                        key={index}><strong>{dept} {number} &mdash; {name}</strong>: {reason}</li>)}
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
                     </div>
                 </div>
             </section>
