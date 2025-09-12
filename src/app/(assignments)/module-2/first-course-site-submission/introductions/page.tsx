@@ -198,7 +198,7 @@ export default function Page() {
                 <h2>Example</h2>
                 <h3>{name}</h3>
                 <figure>
-                    {image === ""? <img src={null} alt={imageCaption} width={500} height={500}/>: <img src={image} alt={imageCaption} width={500} height={500}/>}
+                    {image === ""? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/>: <img src={image} alt={imageCaption} width={500} height={500}/>}
                     <figcaption>{imageCaption}</figcaption>
                 </figure>
                 <ul>
