@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return <>
         <section>
-            <h2>Overview</h2>
+            <h3>Overview</h3>
             <p>Note - to clarify at this point - for our purposes when we say &#34;firm&#34; &#34;design
                 company&#34; &#34;your design firm&#34;
                 or &#34;design firm&#34; we mean your web development/design brand, NOT your animal/whimsical company.
@@ -30,7 +30,7 @@ export default function Page() {
         </section>
         <hr/>
         <section>
-            <h2>Create your design firm</h2>
+            <h3>Create your design firm</h3>
             <p>Come up with a design/consulting/development firm that has your name in it. So for John Jackson it might
                 be Jackson Enterprises, or JJ Unlimited, or something like that.</p>
         </section>

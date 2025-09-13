@@ -10,7 +10,7 @@ export default function FirstCourseSiteSubmission() {
   return (
     <>
       <section>
-        <h2>Overview</h2>
+        <h3>Overview</h3>
         <p>
           This assignment is for submitting the first version of your course site. Follow the detailed requirements in
           the course instructions. If additional specifics are needed here, please provide the latest text and I will
@@ -20,7 +20,7 @@ export default function FirstCourseSiteSubmission() {
       </section>
       <hr />
       <section>
-        <h2>Submission</h2>
+        <h3>Submission</h3>
         <ul>
           <li>Provide the public URL to your course site.</li>
           <li>Ensure pages validate and include the Accumulus validator.</li>

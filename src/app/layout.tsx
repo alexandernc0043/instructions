@@ -13,6 +13,7 @@ export default function RootLayout({children}: Readonly<{ children: ReactNode; }
         <body className="min-h-screen antialiased">
         <Analytics/>
         <div className="mx-auto w-full max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl px-4 sm:px-6 py-6 sm:py-8">
+            <h1>Alexander Prechtel&apos;s Instructions</h1>
             <Warning
                 msg={"THIS WEBSITE IS A WORK IN PROGRESS PLEASE DO NOT SOLELY RELY ON THIS WEBSITE FOR ASSIGNMENT INSTRUCTIONS. PLEASE USE THE OFFICIAL SOURCE (CANVAS)"}/>
             <AutoBreadcrumbs/>

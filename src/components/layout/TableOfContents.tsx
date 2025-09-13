@@ -25,7 +25,7 @@ export default function TableOfContents() {
             {sections.map((elem, index) => (
                 <li key={index + 1}>
                     <Link href={`#${index + 1}`}>
-                        {elem.querySelector("h2")?.textContent}
+                        {elem.querySelector("h3")?.textContent}
                     </Link>
                 </li>
             ))}

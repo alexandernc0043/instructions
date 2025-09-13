@@ -11,7 +11,7 @@ export default function HomePageSubmission() {
     return (
         <>
             <section>
-                <h2>Overview</h2>
+                <h3>Overview</h3>
                 <p>
                     Create a personal home page (<code>index.html</code>) that serves as your main landing page for both
                     your
@@ -22,7 +22,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Technical Structure</h2>
+                <h3>Technical Structure</h3>
                 <ul>
                     <li>
                         Use HTML5 semantic elements: within the body
@@ -33,12 +33,12 @@ export default function HomePageSubmission() {
                         Header: include an <code>&lt;h1&gt;</code> with your name or personal branding.
                     </li>
                     <li>
-                        Main: include one <code>&lt;h2&gt;</code> (the page name) and at least
+                        Main: include one <code>&lt;h3&gt;</code> (the page name) and at least
                         two <code>&lt;p&gt;</code> elements
                         with content about you.
                     </li>
                     <li>
-                        Title: combine your <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> with a divider for the
+                        Title: combine your <code>&lt;h1&gt;</code> and <code>&lt;h3&gt;</code> with a divider for the
                         <code>&lt;title&gt;</code>.
                     </li>
                     <li>Footer: include navigation links (see below).</li>
@@ -50,10 +50,10 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Styling Requirements</h2>
+                <h3>Styling Requirements</h3>
                 <p>Use embedded CSS and update at least these selectors and properties:</p>
                 <ul>
-                    <li>Selectors: at minimum style <code>body</code>, <code>h1</code>, and <code>h2</code>.</li>
+                    <li>Selectors: at minimum style <code>body</code>, <code>h1</code>, and <code>h3</code>.</li>
                     <li>Fonts: pick at least two; differentiate headings from normal text.</li>
                     <li>Colors: set background and font colors (tip: use coolors.co and save the palette URL).</li>
                     <li>Layout: set <strong>margin:</strong> <code>0
@@ -64,7 +64,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Navigation Links (Footer)</h2>
+                <h3>Navigation Links (Footer)</h3>
                 <p>Include these links with clear separators (e.g., ~, |, spacing, or icons):</p>
                 <ul>
                     <li>ITIS3135 — link to <code>itis3135/</code> (your course home page)<Warning msg={"This link should be relative and not absolute."}/></li>
@@ -84,7 +84,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Content Guidelines</h2>
+                <h3>Content Guidelines</h3>
                 <ul>
                     <li>Professional tone suitable for any viewer.</li>
                     <li>Personal focus; do not include course‑specific content.<Warning msg={"This includes things like your freeCodeCamp and Codecademy profile links."}/></li>
@@ -93,7 +93,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>File Management</h2>
+                <h3>File Management</h3>
                 <ul>
                     <li>Create <code>index.html</code> for both your root and <code>itis3135</code> folders.</li>
                     <li>Use SFTP for school website uploads.</li>
@@ -103,7 +103,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Important Notes</h2>
+                <h3>Important Notes</h3>
                 <ul>
                     <li>“Home page” context varies; ensure correct location.</li>
                     <li><code>index.html</code> is the default filename servers look for.</li>
@@ -112,7 +112,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Quality Standards</h2>
+                <h3>Quality Standards</h3>
                 <ul>
                     <li>All links functional and public.</li>
                     <li>No HTML validation errors.</li>
@@ -121,7 +121,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Submission</h2>
+                <h3>Submission</h3>
                 <p>Submit ONE link to your UNCC website home page.</p>
                 <blockquote>
                     <strong>Example: </strong> <a href={"https://webpages.charlotte.edu/aprechte/"} target={"https://webpages.charlotte.edu/aprechte/"}>https://webpages.charlotte.edu/aprechte/</a>
@@ -129,7 +129,7 @@ export default function HomePageSubmission() {
             </section>
             <hr/>
             <section>
-                <h2>Grading</h2>
+                <h3>Grading</h3>
                 <p>
                     1/30 points for pages with errors (with feedback), 2/30 for second submission with remaining errors;
                     continues

@@ -10,7 +10,7 @@ export default function Page() {
     return (
         <>
             <section>
-                <h2>Explore NinerLink</h2>
+                <h3>Explore NinerLink</h3>
                 <p>
                     Explore NinerLink from on the left-hand menu of Canvas. Look at the various options and adjust your
                     settings to your preference. <strong>This is the NUMBER ONE WAY TO GET HELP</strong> — before you text, email, call,
@@ -19,7 +19,7 @@ export default function Page() {
             </section>
             <hr/>
             <section>
-                <h2>Make a Public Post</h2>
+                <h3>Make a Public Post</h3>
                 <p>
                     Make a public post or question — preferably a real question about the course. Note the different
                     kinds of ways you can post.
@@ -27,14 +27,14 @@ export default function Page() {
             </section>
             <hr/>
             <section>
-                <h2>Submission</h2>
+                <h3>Submission</h3>
                 <p>
                     Copy the URL of your post, and paste it here to complete this assignment.
                 </p>
             </section>
             <hr/>
             <section>
-                <h2>Ongoing Participation</h2>
+                <h3>Ongoing Participation</h3>
                 <p>
                     READ EVERY POST TWICE WEEKLY, even if you have no questions — <strong>THIS IS PART OF THE CLASS/COURSE MATERIALS.</strong>
                 </p>

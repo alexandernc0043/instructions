@@ -95,7 +95,7 @@ pre div {
         counter-increment: item;
     }
 
-    h2::before {
+    h3::before {
         content: "(" counter(header) ") ";
         counter-increment: header;
     }

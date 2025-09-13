@@ -11,7 +11,7 @@ export default function AccumulusSetup() {
   return (
     <>
       <section>
-        <h2>Overview</h2>
+        <h3>Overview</h3>
         <p>
           Accumulus provides in‑browser feedback on your webpages, checking structure, accessibility compliance, and
           standardization. Add it to all pages and ensure your pages pass all tests. Manually run WCAG checks via the Accumulus cloud menu.
@@ -19,7 +19,7 @@ export default function AccumulusSetup() {
       </section>
       <hr />
       <section>
-        <h2>Required Script</h2>
+        <h3>Required Script</h3>
         <p>Place this line at the bottom of your page head on each page:</p>
         <pre>
           <CodeHighlight>{`<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>`}</CodeHighlight>
@@ -27,7 +27,7 @@ export default function AccumulusSetup() {
       </section>
       <hr />
       <section>
-        <h2>Steps</h2>
+        <h3>Steps</h3>
         <ul>
           <li>Include the Accumulus script on all pages in <code>/itis3135</code>.</li>
           <li>
@@ -41,7 +41,7 @@ export default function AccumulusSetup() {
       </section>
       <hr />
       <section>
-        <h2>Support</h2>
+        <h3>Support</h3>
         <p>
           For issues or questions, contact the developer (Seth Vance, @voison on Discord, <a href={"mailto:svance3@uncc.edu"}>svance3@uncc.edu</a>) or your
           instructor.

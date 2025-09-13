@@ -11,7 +11,7 @@ export default function M0b() {
     return (
         <>
             <section>
-                <h2>Overview</h2>
+                <h3>Overview</h3>
                 <p>
                     Add your introduction to the shared course Google Doc and follow the
                     specified formatting and checklist below. You will also complete two
@@ -33,7 +33,7 @@ export default function M0b() {
             </section>
             <hr/>
             <section>
-                <h2>Formatting requirements</h2>
+                <h3>Formatting requirements</h3>
                 <p>Under your last bullet, add a centered menu with these links (to your accounts):</p>
                 <ul>
                     <li>CLT Web</li>
@@ -51,7 +51,7 @@ export default function M0b() {
             </section>
             <hr/>
             <section>
-                <h2>Peer reviews</h2>
+                <h3>Peer reviews</h3>
                 <p>
                     Complete two peer reviews. Use the commenting feature in the Google
                     Doc (highlight text, right-click, comment) to suggest updates or
@@ -60,7 +60,7 @@ export default function M0b() {
             </section>
             <hr/>
             <section>
-                <h2>Grading details</h2>
+                <h3>Grading details</h3>
                 <p>
                     We will give you 1 point for any errors/typos with feedback to correct
                     them. If there are still errors, it will be 1 more point, and so on
@@ -69,7 +69,7 @@ export default function M0b() {
             </section>
             <hr/>
             <section>
-                <h2>What to post</h2>
+                <h3>What to post</h3>
                 <p>When posting to Canvas for this assignment, confirm that:</p>
                 <ul>
                     <li>You added your entry following the required formatting.</li>
@@ -92,9 +92,9 @@ export default function M0b() {
             </section>
             <hr/>
             <section>
-                <h2>Submission</h2>
+                <h3>Submission</h3>
                 <p>
-                    In the Google Doc, go to your entry&apos;s heading (the H2 you created
+                    In the Google Doc, go to your entry&apos;s heading (the h3 you created
                     with <em>Last, First</em>), copy the link to that heading, and submit
                     that URL in Canvas. We should be able to click it and jump directly to
                     your entry.

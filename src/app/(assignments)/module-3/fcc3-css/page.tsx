@@ -10,14 +10,14 @@ export default function FCC2_CSS() {
   return (
     <>
       <section>
-        <h2>Overview</h2>
+        <h3>Overview</h3>
         <p>
           Complete these lessons in the freeCodeCamp Full Stack Curriculum. You&apos;ll need to create an account first.
         </p>
       </section>
       <hr />
       <section>
-        <h2>Lessons to Complete</h2>
+        <h3>Lessons to Complete</h3>
         <ul>
           <li>Styling Forms - 67 steps</li>
             <li>The Box Model - 54 steps</li>
@@ -29,7 +29,7 @@ export default function FCC2_CSS() {
       </section>
       <hr />
       <section>
-        <h2>Submission</h2>
+        <h3>Submission</h3>
         <p>
           Post the URL to your freeCodeCamp profile here. Ensure your profile is public and shows points and a timeline.
           If you chose an unusual username, make sure it clearly ties to your real name.

@@ -13,7 +13,7 @@ export default function M0d() {
 
     return <>
         <section>
-            <h2>Setup your computer</h2>
+            <h3>Setup your computer</h3>
             <ol>
                 <li>Enable showing file extensions on your system.
                     <ul>
@@ -82,7 +82,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Setup GitHub</h2>
+            <h3>Setup GitHub</h3>
             <ol>
                 <li>Go to <a target="_blank" href="https://github.com/">GitHub.com</a> and sign in or sign up for an
                     account.
@@ -100,7 +100,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Creating your first webpage.</h2>
+            <h3>Creating your first webpage.</h3>
             <ol>
                 <li>Inside Visual Studio Code create a new file called <code>index.html</code>.</li>
                 <li>Using Visual Studio Code&#39;s Emmett tool type an <code>!</code> and hit Tab or Enter on your
@@ -157,7 +157,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Creating your course page</h2>
+            <h3>Creating your course page</h3>
             <ol>
                 <li>
                     Inside your GITHUB_USER_NAME.github.io folder create a folder named <code>itis3135</code>
@@ -235,7 +235,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Creating your UNCC webspace</h2>
+            <h3>Creating your UNCC webspace</h3>
             <ol>
                 <li>
                     Request your UNCC Webspace by visiting <a
@@ -312,7 +312,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Frequently Asked Questions</h2>
+            <h3>Frequently Asked Questions</h3>
             <ul>
                 <li>Office of OneIT Resources
                     <ul>
@@ -356,7 +356,7 @@ export default function M0d() {
         </section>
         <hr/>
         <section>
-            <h2>Submission</h2>
+            <h3>Submission</h3>
             <blockquote>
                 Please submit the following<br/>
                 <strong>Note:</strong> your university webpage and GitHub webpage should/need to be identical.

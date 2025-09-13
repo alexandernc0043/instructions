@@ -1,6 +1,9 @@
 "use client"
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import CodeHighlight from "@/components/ui/CodeHighlight";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+
+type Course = { dept: string; number: string; name: string; reason: string }
 
 export default function Introductions() {
     const [firstName, setFirstName] = useState("Alexander");
@@ -39,7 +42,7 @@ export default function Introductions() {
     const [professionalBackground, setProfessionalBackground] = useState("This is my first semester as an Instructional Assistant/Teachers Assistant, but before that I was a Peer Tutor for CCI.")
     const [academicBackground, setAcademicBackground] = useState("I’m currently a Junior at UNC Charlotte studying computer science with a focus in Cybersecurity. Before that I attended Highschool in Mooresville, North Carolina.")
     const [primaryComputer, setPrimaryComputer] = useState("The laptop I use for university is a Macbook Pro M2 14 inch. I also use a custom built Windows 11 computer.")
-    const [courses, setCourses] = useState([
+    const [courses, setCourses] = useState<Course[]>([
         {
             dept: "ITIS",
             number: "4250",
@@ -77,6 +80,15 @@ export default function Introductions() {
             reason: "I needed to take a science course with its lab."
         },
     ])
+    // Dialog UI state for managing courses via modals
+    const [isAddOpen, setIsAddOpen] = useState(false)
+    const [isEditOpen, setIsEditOpen] = useState(false)
+    const [isDeleteOpen, setIsDeleteOpen] = useState(false)
+    const [draft, setDraft] = useState<Course>({ dept: "", number: "", name: "", reason: "" })
+    const [activeIndex, setActiveIndex] = useState<number | null>(null)
+    const activeCourse = useMemo(() => (activeIndex == null ? null : courses[activeIndex] ?? null), [activeIndex, courses])
+    const resetDraft = () => setDraft({ dept: "", number: "", name: "", reason: "" })
+
     // Compute JSON data and show it inline instead of downloading
     const inferredFilename = imageFilename || (image ? (image.split("/").pop() || "image") : "image")
     const data = {
@@ -113,11 +125,11 @@ export default function Introductions() {
     return <>
         <div className={"grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"}>
             <section>
-                <h2>Form</h2>
+                <h3>Form</h3>
                 <form onSubmit={(e) => e.preventDefault()} className="my-6">
                     <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
                         <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
-                            <h3 className="text-lg font-semibold">Edit Introduction</h3>
+                            <h4 className="text-lg font-semibold">Edit Introduction</h4>
                             <div className="flex items-center gap-2">
                                 <button
                                     type="button"
@@ -323,12 +335,7 @@ export default function Introductions() {
                                 <h4 className="text-base font-semibold">Courses</h4>
                                 <button
                                     type="button"
-                                    onClick={() => setCourses(prev => [...prev, {
-                                        name: "",
-                                        reason: "",
-                                        dept: "",
-                                        number: ""
-                                    }])}
+                                    onClick={() => { resetDraft(); setActiveIndex(null); setIsAddOpen(true); }}
                                     className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
                                     aria-label="Add course"
                                 >
@@ -337,102 +344,36 @@ export default function Introductions() {
                             </div>
 
                             {courses.length === 0 && (
-                                <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to
-                                    include
-                                    one.</p>
+                                <p className="text-sm text-neutral-600">No courses added. Use "Add Course" to include one.</p>
                             )}
 
                             <div className="flex flex-col gap-3 sm:gap-4">
                                 {courses.map((c, idx) => (
                                     <div key={idx} className="border border-neutral-200 rounded-md p-3 sm:p-4 bg-white">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span
-                                                className="text-sm font-medium text-neutral-700">Course {idx + 1}</span>
-                                            <button
-                                                type="button"
-                                                onClick={() => setCourses(prev => prev.filter((_, i) => i !== idx))}
-                                                className="inline-flex items-center text-sm text-neutral-700 hover:bg-neutral-100 px-2 py-1 rounded-md"
-                                                aria-label={`Remove course ${idx + 1}`}
-                                            >
-                                                Remove
-                                            </button>
-                                        </div>
-                                        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
-                                            <div className="md:col-span-2 flex flex-col gap-1">
-                                                <label className="font-medium text-sm text-neutral-700"
-                                                       htmlFor={`course-dept-${idx}`}>Prefix</label>
-                                                <input
-                                                    id={`course-dept-${idx}`}
-                                                    type="text"
-                                                    value={c.dept}
-                                                    onChange={(e) => {
-                                                        const v = e.target.value;
-                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                            ...pc,
-                                                            dept: v
-                                                        }) : pc));
-                                                    }}
-                                                    placeholder="Prefix"
-                                                    title="Department prefix (e.g., ITIS, MATH)"
-                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                />
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div className="flex-1">
+                                                <div className="text-sm font-medium text-neutral-900">
+                                                    {c.dept || "—"} {c.number || ""} {c.name ? `— ${c.name}` : ""}
+                                                </div>
+                                                <div className="text-sm text-neutral-700 mt-1">
+                                                    {c.reason || <span className="text-neutral-400">No reason provided.</span>}
+                                                </div>
                                             </div>
-                                            <div className="md:col-span-2 flex flex-col gap-1">
-                                                <label className="font-medium text-sm text-neutral-700"
-                                                       htmlFor={`course-number-${idx}`}>Course #</label>
-                                                <input
-                                                    id={`course-number-${idx}`}
-                                                    type="text"
-                                                    value={c.number}
-                                                    onChange={(e) => {
-                                                        const v = e.target.value;
-                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                            ...pc,
-                                                            number: v
-                                                        }) : pc));
-                                                    }}
-                                                    placeholder="####"
-                                                    title="Numeric course identifier (e.g., 3135)"
-                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                />
-                                            </div>
-                                            <div className="md:col-span-4 flex flex-col gap-1">
-                                                <label className="font-medium text-sm text-neutral-700"
-                                                       htmlFor={`course-name-${idx}`}>Course Name</label>
-                                                <input
-                                                    id={`course-name-${idx}`}
-                                                    type="text"
-                                                    value={c.name}
-                                                    onChange={(e) => {
-                                                        const v = e.target.value;
-                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                            ...pc,
-                                                            name: v
-                                                        }) : pc));
-                                                    }}
-                                                    placeholder="Name of the course..."
-                                                    title="Full course title (no section)"
-                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                />
-                                            </div>
-                                            <div className="md:col-span-4 flex flex-col gap-1">
-                                                <label className="font-medium text-sm text-neutral-700"
-                                                       htmlFor={`course-reason-${idx}`}>Reason</label>
-                                                <input
-                                                    id={`course-reason-${idx}`}
-                                                    type="text"
-                                                    value={c.reason}
-                                                    onChange={(e) => {
-                                                        const v = e.target.value;
-                                                        setCourses(prev => prev.map((pc, i) => i === idx ? ({
-                                                            ...pc,
-                                                            reason: v
-                                                        }) : pc));
-                                                    }}
-                                                    placeholder="Why you're taking the course..."
-                                                    title="Why you selected or need this course"
-                                                    className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                />
+                                            <div className="flex items-center gap-2 shrink-0">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => { setActiveIndex(idx); setDraft({ ...c }); setIsEditOpen(true); }}
+                                                    className="inline-flex items-center text-sm text-neutral-700 hover:bg-neutral-100 px-2 py-1 rounded-md"
+                                                >
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => { setActiveIndex(idx); setIsDeleteOpen(true); }}
+                                                    className="inline-flex items-center text-sm text-red-600 hover:bg-red-50 px-2 py-1 rounded-md"
+                                                >
+                                                    Delete
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -444,7 +385,7 @@ export default function Introductions() {
             </section>
 
             <section>
-                <h2>Example</h2>
+                <h3>Example</h3>
                 <div className="my-6 bg-neutral-50 border border-neutral-200 rounded-lg p-4 sm:p-6 shadow-sm">
                     <div className="space-y-4">
                         <p className="text-sm text-neutral-700">I understand that what I put here is publicly available
@@ -454,7 +395,7 @@ export default function Introductions() {
                                 (middleInitial || "").trim()?.[0],
                                 lastName?.trim()?.[0]
                             ].filter(Boolean).join("")} {divider} {new Date().toLocaleDateString()}</p>
-                        <h3 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h3>
+                        <h4 className="text-lg font-semibold">{firstName} {middleInitial}. &#34;{preferredName}&#34; {lastName} {divider} {mascot}</h4>
                         <figure className={"m-auto w-100"}>
                             {image === "" ? <img src={"/headshot.jpeg"} alt={imageCaption} width={500} height={500}/> :
                                 <img src={image} alt={imageCaption} width={500} height={500}/>}
@@ -493,6 +434,194 @@ export default function Introductions() {
                 </div>
             </section>
         </div>
+        {/* Add Course Dialog */}
+        <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Add Course</DialogTitle>
+                    <DialogDescription>Enter the course details below.</DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start mt-2">
+                    <div className="md:col-span-2 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`add-dept`}>Prefix</label>
+                        <input
+                            id={`add-dept`}
+                            type="text"
+                            value={draft.dept}
+                            onChange={(e) => setDraft(prev => ({...prev, dept: e.target.value}))}
+                            placeholder="ITIS"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-2 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`add-number`}>Number</label>
+                        <input
+                            id={`add-number`}
+                            type="text"
+                            value={draft.number}
+                            onChange={(e) => setDraft(prev => ({...prev, number: e.target.value}))}
+                            placeholder="3135"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-8 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`add-name`}>Name</label>
+                        <input
+                            id={`add-name`}
+                            type="text"
+                            value={draft.name}
+                            onChange={(e) => setDraft(prev => ({...prev, name: e.target.value}))}
+                            placeholder="Course name"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-12 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`add-reason`}>Reason</label>
+                        <textarea
+                            id={`add-reason`}
+                            value={draft.reason}
+                            onChange={(e) => setDraft(prev => ({...prev, reason: e.target.value}))}
+                            placeholder="Why you're taking the course..."
+                            rows={4}
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-24"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <button
+                        type="button"
+                        onClick={() => setIsAddOpen(false)}
+                        className="inline-flex items-center gap-2 border border-neutral-300 text-neutral-800 text-sm font-medium px-3 py-1.5 rounded-md hover:bg-neutral-100"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            const toAdd: Course = { ...draft };
+                            setCourses(prev => [...prev, toAdd]);
+                            setIsAddOpen(false);
+                            resetDraft();
+                        }}
+                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                    >
+                        Add
+                    </button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+
+        {/* Edit Course Dialog */}
+        <Dialog open={isEditOpen} onOpenChange={setIsEditOpen}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Edit Course</DialogTitle>
+                    <DialogDescription>Update the course details below.</DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start mt-2">
+                    <div className="md:col-span-2 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`edit-dept`}>Prefix</label>
+                        <input
+                            id={`edit-dept`}
+                            type="text"
+                            value={draft.dept}
+                            onChange={(e) => setDraft(prev => ({...prev, dept: e.target.value}))}
+                            placeholder="ITIS"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-2 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`edit-number`}>Number</label>
+                        <input
+                            id={`edit-number`}
+                            type="text"
+                            value={draft.number}
+                            onChange={(e) => setDraft(prev => ({...prev, number: e.target.value}))}
+                            placeholder="3135"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-8 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`edit-name`}>Name</label>
+                        <input
+                            id={`edit-name`}
+                            type="text"
+                            value={draft.name}
+                            onChange={(e) => setDraft(prev => ({...prev, name: e.target.value}))}
+                            placeholder="Course name"
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="md:col-span-12 flex flex-col gap-1">
+                        <label className="font-medium text-sm text-neutral-700" htmlFor={`edit-reason`}>Reason</label>
+                        <textarea
+                            id={`edit-reason`}
+                            value={draft.reason}
+                            onChange={(e) => setDraft(prev => ({...prev, reason: e.target.value}))}
+                            placeholder="Why you're taking the course..."
+                            rows={4}
+                            className="border border-neutral-300 rounded-md px-3 py-2 bg-white placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-24"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <button
+                        type="button"
+                        onClick={() => setIsEditOpen(false)}
+                        className="inline-flex items-center gap-2 border border-neutral-300 text-neutral-800 text-sm font-medium px-3 py-1.5 rounded-md hover:bg-neutral-100"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            if (activeIndex == null) return setIsEditOpen(false);
+                            const updated: Course = { ...draft };
+                            setCourses(prev => prev.map((c, i) => i === activeIndex ? updated : c));
+                            setIsEditOpen(false);
+                            resetDraft();
+                            setActiveIndex(null);
+                        }}
+                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                    >
+                        Save
+                    </button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+
+        {/* Delete Course Confirm Dialog */}
+        <Dialog open={isDeleteOpen} onOpenChange={setIsDeleteOpen}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Delete course?</DialogTitle>
+                    <DialogDescription>
+                        {activeCourse ? `Remove ${activeCourse.dept} ${activeCourse.number} — ${activeCourse.name}?` : "Remove this course?"}
+                    </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                    <button
+                        type="button"
+                        onClick={() => setIsDeleteOpen(false)}
+                        className="inline-flex items-center gap-2 border border-neutral-300 text-neutral-800 text-sm font-medium px-3 py-1.5 rounded-md hover:bg-neutral-100"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            if (activeIndex == null) return setIsDeleteOpen(false);
+                            setCourses(prev => prev.filter((_, i) => i !== activeIndex));
+                            setIsDeleteOpen(false);
+                            setActiveIndex(null);
+                        }}
+                        className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-3 py-1.5 rounded-md"
+                    >
+                        Delete
+                    </button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
         {showJson && (
             <section ref={jsonSectionRef}>
                 <h2>JSON</h2>
@@ -502,45 +631,5 @@ export default function Introductions() {
                 </CodeHighlight>
             </section>
         )}
-        {/*<section>*/}
-        {/*    <h2>Code</h2>*/}
-        {/*    <CodeHighlight>*/}
-        {/*        {`<h3>${firstName}</h3>\n` +*/}
-        {/*            "  <figure>\n" +*/}
-        {/*            "    <img\n" +*/}
-        {/*            `      alt=\"${imageCaption}\"\n` +*/}
-        {/*            `      src=\"${image}\"\n` +*/}
-        {/*            "    />\n" +*/}
-        {/*            "    <figcaption>\n" +*/}
-        {/*            `      ${imageCaption}\n` +*/}
-        {/*            "    </figcaption>\n" +*/}
-        {/*            "  </figure>\n" +*/}
-        {/*            "\n" +*/}
-        {/*            "  <ul>\n" +*/}
-        {/*            "    <li>\n" +*/}
-        {/*            "      <strong>Personal Background: </strong>\n" +*/}
-        {/*            `      ${personalBackground}\n` +*/}
-        {/*            "    </li>\n" +*/}
-        {/*            "    <li>\n" +*/}
-        {/*            "      <strong>Professional Background: </strong>\n" +*/}
-        {/*            `${professionalBackground}\n` +*/}
-        {/*            "    </li>\n" +*/}
-        {/*            "    <li>\n" +*/}
-        {/*            "      <strong>Academic Background: </strong>\n" +*/}
-        {/*            `${academicBackground}\n` +*/}
-        {/*            "    </li>\n" +*/}
-        {/*            "    <li>\n" +*/}
-        {/*            "      <strong>Primary Computer: </strong>\n" +*/}
-        {/*            `${primaryComputer}\n` +*/}
-        {/*            "    </li>\n" +*/}
-        {/*            "    <li>\n" +*/}
-        {/*            "      <strong>Courses:</strong>\n" +*/}
-        {/*            "      <ul>\n" +*/}
-        {/*            courses.map(({firstName, reason}) => `        <li><strong>${firstName}</strong>: ${reason}</li>\n`).join("") +*/}
-        {/*            "      </ul>\n" +*/}
-        {/*            "    </li>\n" +*/}
-        {/*            "  </ul>\n"}*/}
-        {/*    </CodeHighlight>*/}
-        {/*</section>*/}
     </>
 }

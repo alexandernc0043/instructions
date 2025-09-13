@@ -10,14 +10,14 @@ export default function FCC1_HTML() {
     return (
         <>
             <section>
-                <h2>Overview</h2>
+                <h3>Overview</h3>
                 <p>
                     Complete these lessons in the <a href={"https://www.freecodecamp.org/learn/full-stack-developer/"} target={"_blank"}>freeCodeCamp Full Stack Curriculum</a>. You&apos;ll need to create an account first.
                 </p>
             </section>
             <hr/>
             <section>
-                <h2>Lessons to Complete</h2>
+                <h3>Lessons to Complete</h3>
                 <ul>
                     <li>Basic HTML — 91 steps</li>
                     <li>Semantic HTML — 39 steps</li>
@@ -27,7 +27,7 @@ export default function FCC1_HTML() {
             </section>
             <hr/>
             <section>
-                <h2>Submission</h2>
+                <h3>Submission</h3>
                 <p>
                     Then post the URL to your freeCodeCamp profile here. Be sure your profile is public and shows points
                     and a

@@ -8,7 +8,7 @@ export default function Header({title, message}: { title: string, message: strin
     }, [title]);
     return (
         <>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <blockquote>
                 {message}
             </blockquote>

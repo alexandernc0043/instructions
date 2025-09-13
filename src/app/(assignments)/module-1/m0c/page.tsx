@@ -11,7 +11,7 @@ export default function M0c() {
   return (
     <>
       <section>
-        <h2>Create your accounts</h2>
+        <h3>Create your accounts</h3>
         <p>
           Create accounts on
           {" "}
@@ -28,7 +28,7 @@ export default function M0c() {
       </section>
       <hr />
       <section>
-        <h2>Make profiles public</h2>
+        <h3>Make profiles public</h3>
         <p>
           Adjust each platform’s profile settings so we can view your visible activity (points, timelines/heatmap,
           certifications, etc.).
@@ -41,7 +41,7 @@ export default function M0c() {
       </section>
       <hr />
       <section>
-        <h2>What to submit</h2>
+        <h3>What to submit</h3>
         <ul>
           <li>
             The URL to your <strong>freeCodeCamp</strong> profile showing a public profile with timeline, any
@@ -61,7 +61,7 @@ export default function M0c() {
       </section>
       <hr />
       <section>
-        <h2>Submission</h2>
+        <h3>Submission</h3>
         <p>
           Post a reply in Canvas with the two clickable profile links and your notes (if any). Re‑check that both links
           open and show required details in a private/incognito window before submitting.
@@ -69,7 +69,7 @@ export default function M0c() {
       </section>
       <hr />
       <section>
-        <h2>Grading</h2>
+        <h3>Grading</h3>
         <p>
           There is no partial score for this assignment. Full score means everything is correct. A score of 1/20 means
           you need to fix/complete the requirements as soon as possible; it’s not a reflection of the portion
