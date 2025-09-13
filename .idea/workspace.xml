@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a0f95ee-bbfe-49d0-b5c8-5a2e31e905fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/introductions/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-1/fcc1-html/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/fcc1-html/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0a/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0a/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0b/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0b/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0c/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0c/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0d/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-1/m0d/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/accumulus-validator-setup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/accumulus-validator-setup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/fcc2-css/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/fcc2-css/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/first-course-site-submission/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-2/home-page-submission/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-2/home-page-submission/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-3/fcc3-css/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-3/fcc3-css/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-4/aboutPageMC/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-4/aboutPageMC/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(assignments)/module-4/createDesignFirm/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(assignments)/module-4/createDesignFirm/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data/Introductions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data/Introductions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/TableOfContents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/AutoBreadcrumbs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/AutoBreadcrumbs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +120,7 @@
       <workItem from="1757688171847" duration="10978000" />
       <workItem from="1757709835422" duration="4806000" />
       <workItem from="1757717530462" duration="255000" />
-      <workItem from="1757717835013" duration="3531000" />
+      <workItem from="1757717835013" duration="3979000" />
     </task>
     <servers />
   </component>

@@ -344,7 +344,7 @@ export default function Introductions() {
                             </div>
 
                             {courses.length === 0 && (
-                                <p className="text-sm text-neutral-600">No courses added. Use "Add Course" to include one.</p>
+                                <p className="text-sm text-neutral-600">No courses added. Use &#34;Add Course&#34; to include one.</p>
                             )}
 
                             <div className="flex flex-col gap-3 sm:gap-4">
